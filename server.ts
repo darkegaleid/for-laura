@@ -30,7 +30,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = Number(process.env.PORT || 3000);
-const DATA_DIR = path.resolve(__dirname, 'data');
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://qebvsswpesywtifyhtyt.supabase.co';
+const SUPABASE_SERVICE_ROLE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFlYnZzc3dwZXN5d3RpZnlodHl0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5NTM1Mjg0OSwiZXhwIjoyMTEwOTI4ODQ5fQ.YvVdbrxmWj0-xdZ81crzTb2eEmkVd8Eb-1jPWNpMwdQ';
+
+const DATA_DIR = process.env.VERCEL
+  ? path.resolve('/tmp', 'data')
+  : path.resolve(__dirname, 'data');
 const PHOTOS_DIR = path.resolve(DATA_DIR, 'media', 'photos');
 const AUDIO_DIR = path.resolve(DATA_DIR, 'media', 'audio');
 const STORE_PATH = path.resolve(DATA_DIR, 'bouquet-store.json');
@@ -38,8 +45,70 @@ const AUTH_PATH = path.resolve(DATA_DIR, 'auth.json');
 const PIN_SECRETS_PATH = path.resolve(DATA_DIR, 'pin-secrets.json');
 const VISITOR_GATES_PATH = path.resolve(DATA_DIR, 'visitor-gates.json');
 
-fs.mkdirSync(PHOTOS_DIR, { recursive: true });
-fs.mkdirSync(AUDIO_DIR, { recursive: true });
+try {
+  fs.mkdirSync(PHOTOS_DIR, { recursive: true });
+  fs.mkdirSync(AUDIO_DIR, { recursive: true });
+} catch {}
+
+async function uploadToSupabase(bucket: string, remotePath: string, body: Buffer | string, contentType: string) {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) return;
+  try {
+    const url = `${SUPABASE_URL}/storage/v1/object/${bucket}/${encodeURIComponent(remotePath)}`;
+    const fetchBody = (body instanceof Buffer ? new Uint8Array(body) : body) as unknown as BodyInit;
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+        'Content-Type': contentType,
+        'x-upsert': 'true',
+      },
+      body: fetchBody,
+    });
+  } catch (err) {
+    console.error('Supabase upload error:', err);
+  }
+}
+
+async function fetchFromSupabase(bucket: string, filename: string): Promise<string | null> {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) return null;
+  try {
+    const url = `${SUPABASE_URL}/storage/v1/object/authenticated/${bucket}/${filename}`;
+    const res = await fetch(url, {
+      headers: { 'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` },
+    });
+    if (res.ok) {
+      return await res.text();
+    }
+  } catch {}
+  return null;
+}
+
+async function syncAllFromSupabase() {
+  const storeRaw = await fetchFromSupabase('app-data', 'bouquet-store.json');
+  if (storeRaw) {
+    try {
+      const parsed = JSON.parse(storeRaw);
+      if (parsed && typeof parsed.defaultSlug === 'string' && parsed.bouquets) {
+        storeCache = parsed;
+        try { fs.writeFileSync(STORE_PATH, storeRaw, 'utf8'); } catch {}
+      }
+    } catch {}
+  }
+  const authRaw = await fetchFromSupabase('app-data', 'auth.json');
+  if (authRaw) {
+    try { fs.writeFileSync(AUTH_PATH, authRaw, 'utf8'); } catch {}
+  }
+  const pinRaw = await fetchFromSupabase('app-data', 'pin-secrets.json');
+  if (pinRaw) {
+    try {
+      const parsed = JSON.parse(pinRaw);
+      if (parsed) {
+        pinSecretsCache = parsed;
+        try { fs.writeFileSync(PIN_SECRETS_PATH, pinRaw, 'utf8'); } catch {}
+      }
+    } catch {}
+  }
+}
 
 // Ephemeral in-memory fallback for signing session tokens when SESSION_SECRET env var isn't set
 const SESSION_SECRET =
@@ -105,8 +174,16 @@ type VisitorGatesMap = Record<string, VisitorGateRecord>;
 
 function writeJsonAtomic(filePath: string, payload: unknown) {
   const tmpPath = `${filePath}.${crypto.randomBytes(6).toString('hex')}.tmp`;
-  fs.writeFileSync(tmpPath, JSON.stringify(payload, null, 2), 'utf8');
-  fs.renameSync(tmpPath, filePath);
+  try {
+    fs.writeFileSync(tmpPath, JSON.stringify(payload, null, 2), 'utf8');
+    fs.renameSync(tmpPath, filePath);
+  } catch (err) {
+    console.error('Local file write error:', err);
+  }
+  const filename = path.basename(filePath);
+  uploadToSupabase('app-data', filename, JSON.stringify(payload, null, 2), 'application/json').catch((err) => {
+    console.error('Supabase upload error:', err);
+  });
 }
 
 function normalizeSlug(raw: unknown, fallback = 'pixel-flower-bouquet'): string {
@@ -1323,10 +1400,19 @@ function detectAudioExtension(mimeType: string, origName: string): string | null
   return null;
 }
 
-async function startServer() {
+export function createServerApp() {
   const app = express();
   app.set('trust proxy', true);
   app.use(express.json({ limit: '4mb' }));
+
+  let initialSynced = false;
+  app.use(async (_req, _res, next) => {
+    if (!initialSynced && SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+      initialSynced = true;
+      await syncAllFromSupabase().catch(() => {});
+    }
+    next();
+  });
 
   // --- PUBLIC VIEW-ONLY & ENTRANCE API ---
   app.get('/api/public/entrance', (req, res) => {
@@ -1533,29 +1619,37 @@ async function startServer() {
   app.get('/api/public/bouquet', handlePublicBouquetGet);
   app.get('/api/public/bouquets/:slug', handlePublicBouquetGet);
 
-  // Safe static media serving with strict path confinement
+  // Safe static media serving with strict path confinement (with Supabase CDN fallback)
   app.get('/api/media/photos/:filename', (req, res) => {
     const safeName = path.basename(req.params.filename || '');
     const resolved = path.resolve(PHOTOS_DIR, safeName);
-    if (!resolved.startsWith(PHOTOS_DIR + path.sep) || !fs.existsSync(resolved)) {
-      res.status(404).end();
+    if (fs.existsSync(resolved)) {
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.sendFile(resolved);
       return;
     }
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-    res.sendFile(resolved);
+    if (SUPABASE_URL) {
+      res.redirect(302, `${SUPABASE_URL}/storage/v1/object/public/media/photos/${encodeURIComponent(safeName)}`);
+      return;
+    }
+    res.status(404).end();
   });
 
   app.get('/api/media/audio/:filename', (req, res) => {
     const safeName = path.basename(req.params.filename || '');
     const resolved = path.resolve(AUDIO_DIR, safeName);
-    if (!resolved.startsWith(AUDIO_DIR + path.sep) || !fs.existsSync(resolved)) {
-      res.status(404).end();
+    if (fs.existsSync(resolved)) {
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.sendFile(resolved);
       return;
     }
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-    res.sendFile(resolved);
+    if (SUPABASE_URL) {
+      res.redirect(302, `${SUPABASE_URL}/storage/v1/object/public/media/audio/${encodeURIComponent(safeName)}`);
+      return;
+    }
+    res.status(404).end();
   });
 
   // --- ADMIN AUTHENTICATION ROUTES ---
@@ -2150,7 +2244,12 @@ async function startServer() {
         return;
       }
 
-      fs.writeFileSync(resolved, buf);
+      try {
+        fs.writeFileSync(resolved, buf);
+      } catch (err) {
+        console.warn('Local photo write skipped or failed:', err);
+      }
+      uploadToSupabase('media', `photos/${storedFilename}`, buf, mimeType);
       const url = `/api/media/photos/${storedFilename}`;
 
       const photoRecord: UploadedPhoto = {
@@ -2198,7 +2297,12 @@ async function startServer() {
         return;
       }
 
-      fs.writeFileSync(resolved, buf);
+      try {
+        fs.writeFileSync(resolved, buf);
+      } catch (err) {
+        console.warn('Local audio write skipped or failed:', err);
+      }
+      uploadToSupabase('media', `audio/${storedFilename}`, buf, mimeType);
       res.json({
         url: `/api/media/audio/${storedFilename}`,
         name: cleanName,
@@ -2206,15 +2310,21 @@ async function startServer() {
     },
   );
 
+  return app;
+}
+
+export const app = createServerApp();
+
+async function startServer() {
   // --- VITE DEV MIDDLEWARE / PRODUCTION STATIC ---
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else {
+  } else if (!process.env.VERCEL) {
     const distDir = path.resolve(__dirname, 'dist');
     app.use(express.static(distDir));
     app.get('*', (_req, res) => {
@@ -2227,7 +2337,11 @@ async function startServer() {
   });
 }
 
-startServer().catch((err) => {
-  console.error('Failed to start server:', err);
-  process.exit(1);
-});
+if (!process.env.VERCEL) {
+  startServer().catch((err) => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+}
+
+export default app;
