@@ -63,6 +63,7 @@ import {
   createStarterPhotoSources,
   loadImageSourceFromPhoto,
   readImageFileDimensions,
+  prepareImageForUpload,
   type LoadedImageSource,
 } from '../utils/photoProcessor';
 import {
@@ -454,18 +455,17 @@ export function AdminDashboard({ onNavigatePublic }: AdminDashboardProps) {
 
   const uploadSinglePhotoBinary = async (file: File): Promise<UploadedPhoto> => {
     if (!token) throw new Error('Belum terautentikasi');
-    const dims = await readImageFileDimensions(file);
-    const buffer = await file.arrayBuffer();
+    const prepared = await prepareImageForUpload(file);
     const res = await fetch('/api/admin/media/photo', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type': file.type || 'application/octet-stream',
-        'x-file-name': encodeURIComponent(file.name),
-        'x-image-width': String(dims.width),
-        'x-image-height': String(dims.height),
+        'Content-Type': prepared.type,
+        'x-file-name': encodeURIComponent(prepared.name),
+        'x-image-width': String(prepared.width),
+        'x-image-height': String(prepared.height),
       },
-      body: buffer,
+      body: prepared.buffer,
     });
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}));

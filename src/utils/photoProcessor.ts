@@ -199,6 +199,100 @@ export async function readImageFileDimensions(
   }
 }
 
+export interface PreparedUploadImage {
+  buffer: ArrayBuffer;
+  width: number;
+  height: number;
+  type: string;
+  name: string;
+}
+
+/**
+ * Prepares an image for upload by checking dimensions and file size.
+ * If file size exceeds 2.5MB or max dimension exceeds 2048, it scales and compresses
+ * using canvas to guarantee smooth upload without hitting Vercel serverless 4.5MB payload limit.
+ */
+export async function prepareImageForUpload(
+  file: File,
+  maxDimension = 2048,
+  maxSizeBytes = 2.5 * 1024 * 1024,
+): Promise<PreparedUploadImage> {
+  const url = URL.createObjectURL(file);
+  try {
+    const { img, width, height } = await new Promise<{
+      img: HTMLImageElement;
+      width: number;
+      height: number;
+    }>((resolve, reject) => {
+      const el = new Image();
+      el.onload = () =>
+        resolve({
+          img: el,
+          width: el.naturalWidth || el.width || 1024,
+          height: el.naturalHeight || el.height || 1024,
+        });
+      el.onerror = () => reject(new Error(`Invalid image file: ${file.name}`));
+      el.src = url;
+    });
+
+    const isLargeSize = file.size > maxSizeBytes;
+    const isLargeDim = Math.max(width, height) > maxDimension;
+
+    if (!isLargeSize && !isLargeDim) {
+      const buffer = await file.arrayBuffer();
+      return {
+        buffer,
+        width,
+        height,
+        type: file.type || 'image/jpeg',
+        name: file.name,
+      };
+    }
+
+    let targetWidth = width;
+    let targetHeight = height;
+    if (isLargeDim) {
+      const ratio = Math.min(maxDimension / width, maxDimension / height);
+      targetWidth = Math.max(1, Math.round(width * ratio));
+      targetHeight = Math.max(1, Math.round(height * ratio));
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.width = targetWidth;
+    canvas.height = targetHeight;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      const buffer = await file.arrayBuffer();
+      return { buffer, width, height, type: file.type || 'image/jpeg', name: file.name };
+    }
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+
+    const blob = await new Promise<Blob | null>((resolve) =>
+      canvas.toBlob((b) => resolve(b), 'image/jpeg', 0.88),
+    );
+
+    if (!blob) {
+      const buffer = await file.arrayBuffer();
+      return { buffer, width, height, type: file.type || 'image/jpeg', name: file.name };
+    }
+
+    const buffer = await blob.arrayBuffer();
+    const cleanName = file.name.replace(/\.[^/.]+$/, '') + '.jpg';
+    return {
+      buffer,
+      width: targetWidth,
+      height: targetHeight,
+      type: 'image/jpeg',
+      name: cleanName,
+    };
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
 export function buildPhotoTileAtlas(
   sources: LoadedImageSource[],
   maxTextureSize = 2048,

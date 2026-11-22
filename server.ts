@@ -110,11 +110,23 @@ async function syncAllFromSupabase() {
   }
 }
 
-// Ephemeral in-memory fallback for signing session tokens when SESSION_SECRET env var isn't set
+let syncPromise: Promise<void> | null = null;
+async function ensureSupabaseSynced(): Promise<void> {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) return;
+  if (!syncPromise) {
+    syncPromise = syncAllFromSupabase().catch((err) => {
+      console.error('Supabase sync error:', err);
+      syncPromise = null;
+    });
+  }
+  return syncPromise;
+}
+
+// Deterministic fallback for signing session tokens across serverless invocations
 const SESSION_SECRET =
   process.env.SESSION_SECRET && process.env.SESSION_SECRET.trim().length >= 16
     ? process.env.SESSION_SECRET.trim()
-    : crypto.randomBytes(32).toString('hex');
+    : 'pixel-flower-bouquet-production-session-secret-2026-safe-fixed-v1';
 
 const TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
 const revokedTokens = new Map<string, number>();
@@ -172,7 +184,7 @@ interface VisitorGateRecord {
 
 type VisitorGatesMap = Record<string, VisitorGateRecord>;
 
-function writeJsonAtomic(filePath: string, payload: unknown) {
+async function writeJsonAtomic(filePath: string, payload: unknown): Promise<void> {
   const tmpPath = `${filePath}.${crypto.randomBytes(6).toString('hex')}.tmp`;
   try {
     fs.writeFileSync(tmpPath, JSON.stringify(payload, null, 2), 'utf8');
@@ -181,9 +193,9 @@ function writeJsonAtomic(filePath: string, payload: unknown) {
     console.error('Local file write error:', err);
   }
   const filename = path.basename(filePath);
-  uploadToSupabase('app-data', filename, JSON.stringify(payload, null, 2), 'application/json').catch((err) => {
-    console.error('Supabase upload error:', err);
-  });
+  if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+    await uploadToSupabase('app-data', filename, JSON.stringify(payload, null, 2), 'application/json');
+  }
 }
 
 function normalizeSlug(raw: unknown, fallback = 'pixel-flower-bouquet'): string {
@@ -379,9 +391,9 @@ function loadPinSecrets(): PinSecretsMap {
 
 let pinSecretsCache: PinSecretsMap = loadPinSecrets();
 
-function savePinSecrets(next: PinSecretsMap) {
+async function savePinSecrets(next: PinSecretsMap): Promise<void> {
   pinSecretsCache = next;
-  writeJsonAtomic(PIN_SECRETS_PATH, next);
+  await writeJsonAtomic(PIN_SECRETS_PATH, next);
 }
 
 function hashPin(slug: string, pin: string): PinSecretHash {
@@ -469,9 +481,9 @@ function loadVisitorGates(): VisitorGatesMap {
 
 let visitorGatesCache: VisitorGatesMap = loadVisitorGates();
 
-function saveVisitorGates(next: VisitorGatesMap) {
+async function saveVisitorGates(next: VisitorGatesMap): Promise<void> {
   visitorGatesCache = next;
-  writeJsonAtomic(VISITOR_GATES_PATH, next);
+  await writeJsonAtomic(VISITOR_GATES_PATH, next);
 }
 
 function signVisitorId(vid: string): string {
@@ -925,9 +937,9 @@ function loadStore(): MultiBouquetStoreData {
 
 let storeCache: MultiBouquetStoreData = loadStore();
 
-function saveStore(next: MultiBouquetStoreData) {
+async function saveStore(next: MultiBouquetStoreData): Promise<void> {
   storeCache = next;
-  writeJsonAtomic(STORE_PATH, next);
+  await writeJsonAtomic(STORE_PATH, next);
 }
 
 function getBouquetRecord(rawSlug?: unknown): SingleBouquetRecord | null {
@@ -1405,18 +1417,17 @@ export function createServerApp() {
   app.set('trust proxy', true);
   app.use(express.json({ limit: '4mb' }));
 
-  let initialSynced = false;
   app.use(async (_req, _res, next) => {
-    if (!initialSynced && SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
-      initialSynced = true;
-      await syncAllFromSupabase().catch(() => {});
-    }
+    await ensureSupabaseSynced();
     next();
   });
 
   // --- PUBLIC VIEW-ONLY & ENTRANCE API ---
-  app.get('/api/public/entrance', (req, res) => {
+  app.get('/api/public/entrance', async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
+    if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+      await syncAllFromSupabase().catch(() => {});
+    }
     const requestedSlug = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(requestedSlug);
     if (!record) {
@@ -1454,7 +1465,7 @@ export function createServerApp() {
     res.json(buildPublicEntranceState(record, unlocked));
   });
 
-  app.post('/api/public/pin/verify', (req, res) => {
+  app.post('/api/public/pin/verify', async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     if (!verifySameOriginIfPresent(req)) {
       res.status(403).json({ error: 'Cross-origin PIN verification is not permitted' });
@@ -1549,7 +1560,7 @@ export function createServerApp() {
         usedFakeCount: nextFakeCount,
         lastTriggeredAt: new Date().toISOString(),
       };
-      saveVisitorGates(visitorGatesCache);
+      await saveVisitorGates(visitorGatesCache);
 
       // Identical HTTP status & payload shape as a wrong PIN so network inspection cannot distinguish
       res.status(401).json({
@@ -1585,8 +1596,11 @@ export function createServerApp() {
     });
   });
 
-  const handlePublicBouquetGet = (req: Request, res: Response) => {
+  const handlePublicBouquetGet = async (req: Request, res: Response) => {
     res.setHeader('Cache-Control', 'no-store');
+    if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+      await syncAllFromSupabase().catch(() => {});
+    }
     const requestedSlug =
       typeof req.params.slug === 'string'
         ? req.params.slug
@@ -1664,7 +1678,7 @@ export function createServerApp() {
     res.json(payload);
   });
 
-  app.post('/api/admin/auth/setup', (req, res) => {
+  app.post('/api/admin/auth/setup', async (req, res) => {
     if (!isFirstRunSetupNeeded()) {
       res.status(403).json({ error: 'Administrator password is already configured' });
       return;
@@ -1676,7 +1690,7 @@ export function createServerApp() {
     }
     const salt = crypto.randomBytes(16).toString('hex');
     const hash = crypto.scryptSync(password, salt, 64).toString('hex');
-    writeJsonAtomic(AUTH_PATH, {
+    await writeJsonAtomic(AUTH_PATH, {
       salt,
       hash,
       createdAt: new Date().toISOString(),
@@ -1731,7 +1745,7 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/bouquets', requireAdmin, (req, res) => {
+  app.post('/api/admin/bouquets', requireAdmin, async (req, res) => {
     const rawSlug = typeof req.body?.slug === 'string' ? req.body.slug : '';
     const slug = normalizeSlug(rawSlug, `gift-${Date.now().toString(36)}`);
     if (storeCache.bouquets[slug]) {
@@ -1780,8 +1794,8 @@ export function createServerApp() {
         },
       },
     };
-    saveStore(nextStore);
-    savePinSecrets({ ...pinSecretsCache, [slug]: { draft: null, published: null } });
+    await saveStore(nextStore);
+    await savePinSecrets({ ...pinSecretsCache, [slug]: { draft: null, published: null } });
 
     res.json({
       slug,
@@ -1790,7 +1804,7 @@ export function createServerApp() {
     });
   });
 
-  app.delete('/api/admin/bouquets/:slug', requireAdmin, (req, res) => {
+  app.delete('/api/admin/bouquets/:slug', requireAdmin, async (req, res) => {
     const slug = normalizeSlug(req.params.slug, '');
     const keys = Object.keys(storeCache.bouquets);
     if (!slug || !storeCache.bouquets[slug]) {
@@ -1805,17 +1819,17 @@ export function createServerApp() {
     delete nextBouquets[slug];
     const nextDefault =
       storeCache.defaultSlug === slug ? Object.keys(nextBouquets)[0] : storeCache.defaultSlug;
-    saveStore({ defaultSlug: nextDefault, bouquets: nextBouquets });
+    await saveStore({ defaultSlug: nextDefault, bouquets: nextBouquets });
 
     const nextSecrets = { ...pinSecretsCache };
     delete nextSecrets[slug];
-    savePinSecrets(nextSecrets);
+    await savePinSecrets(nextSecrets);
 
     const nextGates = { ...visitorGatesCache };
     for (const k of Object.keys(nextGates)) {
       if (k.endsWith(`::${slug}`)) delete nextGates[k];
     }
-    saveVisitorGates(nextGates);
+    await saveVisitorGates(nextGates);
 
     res.json({
       defaultSlug: nextDefault,
@@ -1823,13 +1837,13 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/bouquets/:slug/set-default', requireAdmin, (req, res) => {
+  app.post('/api/admin/bouquets/:slug/set-default', requireAdmin, async (req, res) => {
     const slug = normalizeSlug(req.params.slug, '');
     if (!slug || !storeCache.bouquets[slug]) {
       res.status(404).json({ error: 'Buket tidak ditemukan' });
       return;
     }
-    saveStore({ ...storeCache, defaultSlug: slug });
+    await saveStore({ ...storeCache, defaultSlug: slug });
     res.json({
       defaultSlug: slug,
       bouquets: buildAdminSummaries(),
@@ -1837,7 +1851,10 @@ export function createServerApp() {
   });
 
   // --- PROTECTED ADMIN MANAGEMENT ROUTES ---
-  app.get('/api/admin/state', requireAdmin, (req, res) => {
+  app.get('/api/admin/state', requireAdmin, async (req, res) => {
+    if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+      await syncAllFromSupabase().catch(() => {});
+    }
     const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(slugParam);
     if (!record) {
@@ -1867,7 +1884,7 @@ export function createServerApp() {
     });
   });
 
-  app.put('/api/admin/draft', requireAdmin, (req, res) => {
+  app.put('/api/admin/draft', requireAdmin, async (req, res) => {
     try {
       const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
       const record = getBouquetRecord(slugParam);
@@ -1886,7 +1903,7 @@ export function createServerApp() {
         sanitized.entrance.hasPinConfigured = hasDraftPin(record.slug);
       }
 
-      saveStore({
+      await saveStore({
         ...storeCache,
         bouquets: {
           ...storeCache.bouquets,
@@ -1902,7 +1919,7 @@ export function createServerApp() {
     }
   });
 
-  app.put('/api/admin/bouquets/:slug/pin', requireAdmin, (req, res) => {
+  app.put('/api/admin/bouquets/:slug/pin', requireAdmin, async (req, res) => {
     const slug = normalizeSlug(req.params.slug, '');
     const record = storeCache.bouquets[slug];
     if (!record) {
@@ -1923,7 +1940,7 @@ export function createServerApp() {
 
     const hashed = hashPin(slug, pin);
     const existingSecret = pinSecretsCache[slug] ?? {};
-    savePinSecrets({
+    await savePinSecrets({
       ...pinSecretsCache,
       [slug]: {
         ...existingSecret,
@@ -1936,7 +1953,7 @@ export function createServerApp() {
     nextDraft.entrance.hasPinConfigured = true;
     nextDraft.updatedAt = new Date().toISOString();
 
-    saveStore({
+    await saveStore({
       ...storeCache,
       bouquets: {
         ...storeCache.bouquets,
@@ -1954,7 +1971,7 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/bouquets/:slug/reset-fake-failure', requireAdmin, (req, res) => {
+  app.post('/api/admin/bouquets/:slug/reset-fake-failure', requireAdmin, async (req, res) => {
     const slug = normalizeSlug(req.params.slug, '');
     if (!storeCache.bouquets[slug]) {
       res.status(404).json({ error: 'Buket tidak ditemukan' });
@@ -1968,7 +1985,7 @@ export function createServerApp() {
         cleared++;
       }
     }
-    saveVisitorGates(nextGates);
+    await saveVisitorGates(nextGates);
     res.json({
       ok: true,
       cleared,
@@ -2029,7 +2046,7 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/publish', requireAdmin, (req, res) => {
+  app.post('/api/admin/publish', requireAdmin, async (req, res) => {
     const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(slugParam);
     if (!record) {
@@ -2046,7 +2063,7 @@ export function createServerApp() {
     const currentSecret = pinSecretsCache[record.slug] ?? {};
     const nextPublishedSecret = currentSecret.draft ?? currentSecret.published ?? null;
     if (currentSecret.draft || currentSecret.published) {
-      savePinSecrets({
+      await savePinSecrets({
         ...pinSecretsCache,
         [record.slug]: {
           draft: nextPublishedSecret,
@@ -2070,7 +2087,7 @@ export function createServerApp() {
 
     const nextBackups = [backup, ...record.backups].slice(0, 12);
 
-    saveStore({
+    await saveStore({
       ...storeCache,
       bouquets: {
         ...storeCache.bouquets,
@@ -2098,7 +2115,7 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/discard-draft', requireAdmin, (req, res) => {
+  app.post('/api/admin/discard-draft', requireAdmin, async (req, res) => {
     const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(slugParam);
     if (!record) {
@@ -2109,7 +2126,7 @@ export function createServerApp() {
     // Revert draft PIN back to published PIN
     const currentSecret = pinSecretsCache[record.slug];
     if (currentSecret) {
-      savePinSecrets({
+      await savePinSecrets({
         ...pinSecretsCache,
         [record.slug]: {
           draft: currentSecret.published ?? null,
@@ -2122,7 +2139,7 @@ export function createServerApp() {
     if (reverted.entrance) {
       reverted.entrance.hasPinConfigured = hasDraftPin(record.slug);
     }
-    saveStore({
+    await saveStore({
       ...storeCache,
       bouquets: {
         ...storeCache.bouquets,
@@ -2135,7 +2152,7 @@ export function createServerApp() {
     res.json({ draft: reverted, pinStatus: buildAdminPinStatus(record.slug) });
   });
 
-  app.post('/api/admin/backups', requireAdmin, (req, res) => {
+  app.post('/api/admin/backups', requireAdmin, async (req, res) => {
     const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(slugParam);
     if (!record) {
@@ -2155,7 +2172,7 @@ export function createServerApp() {
       config: structuredClone(record.draft),
     };
 
-    saveStore({
+    await saveStore({
       ...storeCache,
       bouquets: {
         ...storeCache.bouquets,
@@ -2175,7 +2192,7 @@ export function createServerApp() {
     });
   });
 
-  app.post('/api/admin/backups/:id/restore', requireAdmin, (req, res) => {
+  app.post('/api/admin/backups/:id/restore', requireAdmin, async (req, res) => {
     const slugParam = typeof req.query.slug === 'string' ? req.query.slug : undefined;
     const record = getBouquetRecord(slugParam);
     if (!record) {
@@ -2195,7 +2212,7 @@ export function createServerApp() {
       restored.entrance.hasPinConfigured = hasDraftPin(record.slug);
     }
 
-    saveStore({
+    await saveStore({
       ...storeCache,
       bouquets: {
         ...storeCache.bouquets,
@@ -2219,18 +2236,14 @@ export function createServerApp() {
     '/api/admin/media/photo',
     requireAdmin,
     express.raw({ type: ['image/*', 'application/octet-stream'], limit: '22mb' }),
-    (req, res) => {
+    async (req, res) => {
       const buf = req.body;
       if (!Buffer.isBuffer(buf) || buf.length === 0) {
         res.status(400).json({ error: 'Empty image payload' });
         return;
       }
-      const mimeType = String(req.headers['content-type'] || '');
-      const ext = detectImageExtension(buf, mimeType);
-      if (!ext) {
-        res.status(400).json({ error: 'Unsupported image format. Please use JPG, PNG, or WEBP.' });
-        return;
-      }
+      const mimeType = String(req.headers['content-type'] || 'image/jpeg');
+      const ext = detectImageExtension(buf, mimeType) || '.jpg';
 
       const rawName = decodeURIComponent(String(req.headers['x-file-name'] || 'photo'));
       const cleanName = path.basename(rawName).slice(0, 120) || `photo${ext}`;
@@ -2249,7 +2262,7 @@ export function createServerApp() {
       } catch (err) {
         console.warn('Local photo write skipped or failed:', err);
       }
-      uploadToSupabase('media', `photos/${storedFilename}`, buf, mimeType);
+      await uploadToSupabase('media', `photos/${storedFilename}`, buf, mimeType);
       const url = `/api/media/photos/${storedFilename}`;
 
       const photoRecord: UploadedPhoto = {
@@ -2273,7 +2286,7 @@ export function createServerApp() {
     '/api/admin/media/audio',
     requireAdmin,
     express.raw({ type: ['audio/*', 'application/octet-stream'], limit: '28mb' }),
-    (req, res) => {
+    async (req, res) => {
       const buf = req.body;
       if (!Buffer.isBuffer(buf) || buf.length === 0) {
         res.status(400).json({ error: 'Empty audio payload' });
@@ -2302,7 +2315,7 @@ export function createServerApp() {
       } catch (err) {
         console.warn('Local audio write skipped or failed:', err);
       }
-      uploadToSupabase('media', `audio/${storedFilename}`, buf, mimeType);
+      await uploadToSupabase('media', `audio/${storedFilename}`, buf, mimeType);
       res.json({
         url: `/api/media/audio/${storedFilename}`,
         name: cleanName,
