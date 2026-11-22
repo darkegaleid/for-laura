@@ -1,0 +1,955 @@
+Berikut **1 MASTER PROMPT FINAL dalam bahasa Inggris** yang menggabungkan seluruh permintaan dari awal: website 3D Flower Bouquet sesuai gambar referensi, halaman publik, Admin Dashboard untuk mengatur semua elemen, perbaikan pita, tag yang lebih tebal dengan warna lebih redup, bintang dan bulan, serta animasi bunga dirangkai satu per satu ketika website pertama kali dibuka.
+
+Prompt ini ditujukan untuk **mengembangkan dan memperbaiki project yang sudah ada**, bukan membuat ulang dari nol.
+
+\# ULTIMATE MASTER PROMPT — INTERACTIVE 3D FLOWER BOUQUET WEBSITE, PUBLIC EXPERIENCE & FULL ADMIN DASHBOARD\
+\
+\## 1. PROJECT OBJECTIVE\
+\
+Develop, improve, and complete the existing Interactive 3D Flower Bouquet website based on the provided reference screenshot.\
+\
+The website must provide two fully integrated interfaces:\
+\
+\*\*1. Public Website:\*\* A beautiful, immersive, romantic 3D flower bouquet experience with cinematic animations, interactive photographs, music, stars, a moon, and personalized messages.\
+\
+\*\*2. Admin Dashboard:\*\* A comprehensive visual management system where administrators can customize every aspect of the public experience without modifying source code.\
+\
+This task is an enhancement of the EXISTING project.\
+\
+Do not rebuild the application unnecessarily, remove functioning features, or replace existing components without a technical reason.\
+\
+Inspect the current architecture and reuse existing implementations whenever possible.\
+\
+The public website must closely follow the visual composition of the supplied reference image.\
+\
+\---\
+\
+\# PART A — PUBLIC WEBSITE VISUAL DESIGN\
+\
+\## 2. MAIN VISUAL CONCEPT\
+\
+Create a premium, romantic nighttime atmosphere.\
+\
+Required visual elements:\
+\
+\- Pure black background (#000000).\
+\- Beautiful 3D pink lily bouquet at the center.\
+\- Realistic pink petals with soft white highlights.\
+\- Natural green stems and leaves.\
+\- Elegant pastel pink wrapping paper.\
+\- Prominent satin ribbon.\
+\- Thicker gift tag with muted, less-bright colors.\
+\- Numerous small stars across the background.\
+\- A softly glowing moon.\
+\- Floating flower petals.\
+\- Pink and white pixel particles.\
+\- Subtle atmospheric particle effects.\
+\- Smooth cinematic animation.\
+\- Minimal user interface.\
+\- Romantic message card in the upper-right corner.\
+\
+The bouquet must remain the central visual focus.\
+\
+Avoid excessive decorations, generic website layouts, oversized buttons, and distracting UI elements.\
+\
+\## 3. REMOVE UNNECESSARY PUBLIC TEXT\
+\
+Completely remove the following three text elements:\
+\
+\- "Pixel Flower Bouquet"\
+\- "Click any pixel to open original photo"\
+\- "Enjoy the view ♡"\
+\
+Remove their associated layout containers, unnecessary spacing, and invisible overlays.\
+\
+Do not leave empty gaps.\
+\
+Do not remove the underlying interactive photograph functionality.\
+\
+Keep the romantic message card and bottom controls.\
+\
+If the removed text is stored in the database, preserve the saved values where appropriate but do not render these elements on the public page.\
+\
+\---\
+\
+\# PART B — ADVANCED 3D FLOWER BOUQUET\
+\
+\## 4. FLOWER GEOMETRY\
+\
+Use genuine interactive 3D flower models built using Three.js and React Three Fiber.\
+\
+The default bouquet should contain approximately 7–10 pink lilies.\
+\
+Each flower should feature:\
+\- Six naturally curved petals.\
+\- Delicate pink-to-white gradients.\
+\- Soft edges and realistic curvature.\
+\- Visible central stamens.\
+\- Organic flower proportions.\
+\- Individual blooming animations.\
+\- Subtle swaying movement.\
+\- Adjustable size, position, and orientation.\
+\
+Include:\
+\- Realistic stems.\
+\- Leaves.\
+\- Smaller flower buds.\
+\- Natural flower arrangement.\
+\- Depth variation.\
+\
+Avoid simplistic geometric flowers or flat image substitutes.\
+\
+Every flower must be configurable through the Admin Dashboard.\
+\
+\## 5. BOUQUET WRAPPING\
+\
+The wrapping paper should resemble an elegant real flower bouquet.\
+\
+Requirements:\
+\- Pastel pink wrapping.\
+\- Multiple folded paper layers.\
+\- Natural geometric folds.\
+\- Tapered wrapping shape.\
+\- Subtle surface texture.\
+\- Realistic shadows.\
+\- Proper alignment with flower stems.\
+\
+The wrapping must move together with the bouquet during rotation and animation.\
+\
+\---\
+\
+\# PART C — FIX THE 3D RIBBON\
+\
+\## 6. RIBBON POSITIONING BUG\
+\
+The current ribbon is positioned too close to the wrapping paper and appears partially hidden.\
+\
+Fix this issue properly.\
+\
+Required improvements:\
+\- Move the ribbon noticeably farther outward.\
+\- Increase its forward offset from the wrapping paper.\
+\- Make the bow clearly visible from the default camera angle.\
+\- Ensure the ribbon still looks naturally tied around the bouquet.\
+\- Create two prominent curved bow loops.\
+\- Improve ribbon thickness and depth.\
+\- Add realistic hanging ribbon tails.\
+\- Use a soft pastel pink satin material.\
+\- Improve lighting and subtle fabric reflections.\
+\- Eliminate clipping and intersections.\
+\- Keep the ribbon attached during rotation and animations.\
+\
+Inspect the existing ribbon mesh, wrapping geometry, local transformations, and parent hierarchy.\
+\
+Do not use arbitrary world-space offsets that break when the bouquet rotates.\
+\
+Do not hide geometry bugs by disabling depth testing.\
+\
+\## 7. RIBBON GIFT TAG IMPROVEMENTS\
+\
+The small tag attached to the ribbon currently appears too thin and excessively bright.\
+\
+Improve it.\
+\
+Required changes:\
+\- Increase the tag's actual 3D thickness.\
+\- Add subtle beveled edges.\
+\- Make the tag more solid and dimensional.\
+\- Improve its material and shadows.\
+\- Reduce excessive brightness.\
+\- Reduce excessive saturation.\
+\- Remove unnecessary glow.\
+\- Use softer muted colors.\
+\- Keep tag text readable.\
+\- Ensure the tag remains properly attached to the ribbon.\
+\
+Suggested colors:\
+\- Dusty Pink: #C58E9C\
+\- Muted Rose: #B98291\
+\- Warm Cream: #D8C6BD\
+\
+Avoid pure white or overly saturated pink.\
+\
+The tag must look premium, elegant, and naturally integrated into the bouquet.\
+\
+\---\
+\
+\# PART D — STARRY NIGHT & MOON\
+\
+\## 8. STARS — DO NOT REMOVE\
+\
+\*\*CRITICAL REQUIREMENT: KEEP THE EXISTING STARS AND ADD MORE STARS.\*\*\
+\
+The previous implementation incorrectly removed or hid the stars.\
+\
+This must be corrected.\
+\
+Required behavior:\
+\- Restore any missing stars.\
+\- Preserve all existing stars.\
+\- Add additional stars across the dark background.\
+\- Use small white and pale-pink stars.\
+\- Vary star size slightly.\
+\- Use natural random distribution.\
+\- Mix static stars with softly twinkling stars.\
+\- Keep stars visible during all animations.\
+\- Keep stars visible after the bouquet is assembled.\
+\
+Do not reduce the star count unintentionally.\
+\
+Do not replace the starfield when introducing the moon.\
+\
+The moon and stars must coexist.\
+\
+\### Star animation\
+\
+Implement:\
+\- Gentle twinkling.\
+\- Slow opacity variation.\
+\- Subtle brightness transitions.\
+\- Independent timing.\
+\- Seamless looping.\
+\
+Avoid aggressive blinking, large cartoon shapes, or excessive glow.\
+\
+\### Technical requirements\
+\
+Inspect:\
+\- Particle rendering.\
+\- Visibility settings.\
+\- Layering.\
+\- Depth configuration.\
+\- Camera position.\
+\- Conditional rendering.\
+\- Animation state.\
+\- Existing dashboard settings.\
+\
+Fix the cause of disappearing stars rather than adding temporary visual workarounds.\
+\
+The default star visibility for newly created bouquets must be enabled.\
+\
+Do not overwrite explicit saved preferences for existing bouquets.\
+\
+\## 9. ADD A BEAUTIFUL MOON\
+\
+Add a visible moon to the nighttime background.\
+\
+Visual requirements:\
+\- Realistic or elegantly stylized moon.\
+\- Soft pale-white or warm-cream color.\
+\- Subtle surface details.\
+\- Gentle halo glow.\
+\- Cinematic appearance.\
+\- Balanced placement.\
+\
+The moon should be positioned in the upper area of the composition, behind the bouquet.\
+\
+It must not:\
+\- Cover the flowers.\
+\- Overlap the romantic message card.\
+\- Block interactive controls.\
+\- Become brighter than the main bouquet.\
+\
+\### Moon animation\
+\
+Use a calm effect:\
+\- Very subtle glow variation.\
+\- Gentle atmospheric shimmer.\
+\- Minimal movement.\
+\
+The moon must remain visible throughout the entire entrance sequence.\
+\
+The moon must not cause existing stars to disappear.\
+\
+\---\
+\
+\# PART E — CINEMATIC FLOWER ASSEMBLY ENTRANCE\
+\
+\## 10. MAIN ENTRANCE ANIMATION CONCEPT\
+\
+When a visitor first opens the website, the bouquet must look as though it is being freshly arranged by an invisible florist.\
+\
+Do not display a fully assembled bouquet immediately.\
+\
+Do not use a simple fade-in or scale-up animation.\
+\
+Create an actual staged bouquet assembly using the individual 3D flowers, stems, wrapping, and ribbon.\
+\
+\### Stage 1 — Romantic Night Sky (0–1 seconds)\
+\
+\- Begin with a black background.\
+\- Display the moon.\
+\- Display all existing and additional stars.\
+\- Stars gently twinkle.\
+\- Small pink particles float in the scene.\
+\- The bouquet is not yet assembled.\
+\
+\### Stage 2 — Stems Appear (1–2.5 seconds)\
+\
+\- Green stems move into the scene individually.\
+\- Each stem enters from a different direction.\
+\- Stems gradually move toward their final positions.\
+\- Use smooth organic motion.\
+\- Leaves slowly unfold.\
+\- Avoid abrupt transitions.\
+\
+\### Stage 3 — Flowers Are Arranged (2.5–5 seconds)\
+\
+\- Pink lilies enter one at a time.\
+\- Each flower moves toward its designated position.\
+\- Center flowers arrive first.\
+\- Surrounding flowers follow.\
+\- Flowers rotate naturally while moving.\
+\- Petals begin blooming as flowers reach their positions.\
+\- Use staggered timing.\
+\- Add subtle swaying and secondary motion.\
+\
+The animation must feel like real flowers being carefully arranged.\
+\
+\### Stage 4 — Wrapping Paper Forms (5–6.5 seconds)\
+\
+\- Pink wrapping paper begins appearing around the stems.\
+\- Individual paper sections fold into position.\
+\- The paper gradually encloses the lower bouquet.\
+\- Use realistic folding movement.\
+\- Avoid intersecting the flowers.\
+\
+\### Stage 5 — Ribbon Is Tied (6.5–7.5 seconds)\
+\
+\- The ribbon wraps around the bouquet.\
+\- Bow loops form naturally.\
+\- The bow extends prominently outward.\
+\- Ribbon tails gently fall into place.\
+\- The thicker muted-color gift tag settles into position.\
+\- Add subtle secondary motion.\
+\
+Ensure the ribbon does not disappear inside the wrapping.\
+\
+\### Stage 6 — Final Reveal (7.5–9 seconds)\
+\
+\- Pixel particles gather around the bouquet.\
+\- Flower petals begin falling.\
+\- Stars continue twinkling.\
+\- The moon softly glows.\
+\- The camera gently settles toward the completed bouquet.\
+\- The bouquet begins floating.\
+\- Subtle lighting highlights the flowers.\
+\- The scene transitions into idle animation.\
+\
+The default duration is approximately nine seconds.\
+\
+Administrators must be able to customize the total duration.\
+\
+\## 11. ENTRANCE ANIMATION TECHNICAL REQUIREMENTS\
+\
+\- Reuse existing 3D flower objects.\
+\- Animate each object independently.\
+\- Use local transforms.\
+\- Support staggered animation.\
+\- Use smooth easing functions.\
+\- Avoid teleporting.\
+\- Avoid unnatural intersections.\
+\- Keep animation deterministic for replay.\
+\- Do not recreate geometry unnecessarily.\
+\- Clean up animation timelines correctly.\
+\- Support reduced-motion preferences.\
+\
+The final assembled bouquet must exactly match the configuration saved through the dashboard.\
+\
+Do not hardcode the number or positions of flowers.\
+\
+\## 12. CAMERA ANIMATION\
+\
+During assembly:\
+\- Start with a slightly wider camera framing.\
+\- Slowly move toward the bouquet.\
+\- Maintain a stable cinematic perspective.\
+\- Keep all flowers visible.\
+\- Avoid excessive rotation.\
+\
+After assembly:\
+\- Enable user camera controls.\
+\- Support rotation.\
+\- Support zoom.\
+\- Continue gentle idle movement.\
+\
+\## 13. REPLAY AND SKIP CONTROLS\
+\
+Implement:\
+\- Replay Intro button.\
+\- Optional Skip Intro button.\
+\- Replay functionality inside the dashboard.\
+\- Proper animation reset.\
+\- Immediate final-state rendering when skipping.\
+\
+Replaying must not duplicate objects or create memory leaks.\
+\
+\---\
+\
+\# PART F — INTERACTIVE PHOTOS\
+\
+\## 14. PIXEL PHOTO SYSTEM\
+\
+Preserve and improve the existing interactive pixel system.\
+\
+Visitors can click or tap designated pink and white pixel particles to open photographs.\
+\
+Required features:\
+\- Multiple uploaded photographs.\
+\- Photo assignments.\
+\- Clickable interactive pixels.\
+\- Smooth photo opening transition.\
+\- High-resolution photo viewer.\
+\- Captions.\
+\- Previous/next navigation.\
+\- Close button.\
+\- Mobile swipe navigation.\
+\
+Removing the top-left text must not disable interactive photo pixels.\
+\
+All photos must be managed through the Admin Dashboard.\
+\
+\---\
+\
+\# PART G — MUSIC & PUBLIC CONTROLS\
+\
+\## 15. BACKGROUND MUSIC\
+\
+Preserve:\
+\- Background music playback.\
+\- MP3 upload support.\
+\- Play/pause control.\
+\- Volume adjustment.\
+\- Loop settings.\
+\- Optional autoplay preference.\
+\- Fade-in/fade-out.\
+\
+Respect browser autoplay restrictions.\
+\
+Provide an unobtrusive user action to enable audio if autoplay is blocked.\
+\
+\## 16. PUBLIC INTERACTION BAR\
+\
+Keep the minimal bottom control bar.\
+\
+Features:\
+\- Play/pause animation.\
+\- Play/pause music.\
+\- Volume control.\
+\- Auto-rotation.\
+\- Reset camera.\
+\- Toggle falling petals.\
+\- Toggle stars.\
+\- Toggle moon.\
+\- Replay entrance animation.\
+\- Fullscreen.\
+\- Photo gallery.\
+\
+Controls must work on desktop and mobile.\
+\
+Do not add unnecessary oversized buttons.\
+\
+\---\
+\
+\# PART H — ADMIN DASHBOARD\
+\
+\## 17. DASHBOARD OVERVIEW\
+\
+Maintain a separate modern Admin Dashboard.\
+\
+Design:\
+\- Premium dark interface.\
+\- Clean sidebar.\
+\- Compact top navigation.\
+\- Modern cards.\
+\- Organized forms.\
+\- Responsive layout.\
+\- Live 3D preview.\
+\- Consistent icons.\
+\- Professional UI/UX.\
+\
+Dashboard labels should use Bahasa Indonesia by default.\
+\
+\## 18. DASHBOARD MENU STRUCTURE\
+\
+Include:\
+\
+1\. Overview\
+2\. Bouquet Management\
+3\. Flower Editor\
+4\. Wrapping Editor\
+5\. Ribbon & Gift Tag Editor\
+6\. Photo Manager\
+7\. Message Editor\
+8\. Music Manager\
+9\. Entrance Animation Settings\
+10\. Particle & Star Settings\
+11\. Moon Settings\
+12\. Theme & Appearance\
+13\. Live Preview\
+14\. Publish Manager\
+15\. Backup & Settings\
+\
+Use organized navigation rather than overcrowding the sidebar.\
+\
+\## 19. FLOWER EDITOR\
+\
+Allow administrators to:\
+\- Add flowers.\
+\- Remove flowers.\
+\- Duplicate flowers.\
+\- Choose flower types.\
+\- Adjust colors.\
+\- Change flower sizes.\
+\- Edit positions X/Y/Z.\
+\- Edit rotations X/Y/Z.\
+\- Adjust bloom intensity.\
+\- Adjust bloom timing.\
+\- Configure swaying.\
+\- Rearrange flower composition.\
+\
+All changes must update the 3D preview immediately.\
+\
+\## 20. RIBBON EDITOR\
+\
+Provide:\
+\- Position X/Y/Z.\
+\- Forward offset.\
+\- Bow size.\
+\- Loop size.\
+\- Ribbon thickness.\
+\- Tail length.\
+\- Ribbon color.\
+\- Material settings.\
+\- Animation duration.\
+\
+\## 21. GIFT TAG EDITOR\
+\
+Provide:\
+\- Tag visibility.\
+\- Width.\
+\- Height.\
+\- Thickness.\
+\- Position.\
+\- Rotation.\
+\- Color picker.\
+\- Brightness.\
+\- Roughness.\
+\- Text content.\
+\- Text color.\
+\- Swing intensity.\
+\
+\## 22. STAR SETTINGS\
+\
+Provide:\
+\- Enable/disable stars.\
+\- Star count.\
+\- Star density.\
+\- Star size.\
+\- Star color.\
+\- Star brightness.\
+\- Twinkle intensity.\
+\- Twinkle speed.\
+\- Star distribution.\
+\
+Increasing the star density must actually add more visible stars.\
+\
+Do not make existing stars disappear when these settings change.\
+\
+\## 23. MOON SETTINGS\
+\
+Provide:\
+\- Enable/disable moon.\
+\- Moon style.\
+\- Moon size.\
+\- Position X/Y.\
+\- Moon color.\
+\- Brightness.\
+\- Glow intensity.\
+\- Opacity.\
+\- Optional surface texture.\
+\
+Ensure changes update the public preview.\
+\
+\## 24. ENTRANCE ANIMATION EDITOR\
+\
+Provide:\
+\- Enable/disable animation.\
+\- Total animation duration.\
+\- Stem entrance timing.\
+\- Flower entrance timing.\
+\- Bloom timing.\
+\- Wrapping animation timing.\
+\- Ribbon tying timing.\
+\- Camera movement intensity.\
+\- Pixel reveal intensity.\
+\- Final glow intensity.\
+\- Skip Intro toggle.\
+\- Replay Preview button.\
+\
+The preview must accurately reproduce the public animation.\
+\
+\## 25. PHOTO MANAGER\
+\
+Provide:\
+\- Upload photographs.\
+\- Replace photographs.\
+\- Delete photographs.\
+\- Reorder photographs.\
+\- Edit captions.\
+\- Assign photos to flowers.\
+\- Configure interactive pixel mapping.\
+\
+Use persistent object storage.\
+\
+\## 26. MESSAGE EDITOR\
+\
+Allow customization of:\
+\- Recipient name.\
+\- Sender name.\
+\- Romantic message.\
+\- Special date.\
+\- Gift card text.\
+\- Text color.\
+\- Text size.\
+\- Card border.\
+\- Card opacity.\
+\- Message animation.\
+\
+Do not restore the three removed top-left texts.\
+\
+\## 27. THEME SETTINGS\
+\
+Provide:\
+\- Background color.\
+\- Flower colors.\
+\- Ribbon colors.\
+\- Wrapping colors.\
+\- Pixel colors.\
+\- Star colors.\
+\- Moon appearance.\
+\- Lighting intensity.\
+\- Particle density.\
+\- Typography settings.\
+\
+Suggested presets:\
+\- Romantic Pink.\
+\- White Lily.\
+\- Purple Dream.\
+\- Midnight Blue.\
+\- Red Rose.\
+\
+\## 28. LIVE PREVIEW\
+\
+Every customization must update the preview immediately.\
+\
+Examples:\
+\- Changing ribbon offset moves the ribbon.\
+\- Increasing tag thickness changes its geometry.\
+\- Lowering tag brightness reduces its luminance.\
+\- Increasing star density adds stars.\
+\- Moving the moon updates its position.\
+\- Changing flower count updates the arrangement.\
+\- Changing animation duration affects the entrance sequence.\
+\
+Support:\
+\- Desktop preview.\
+\- Tablet preview.\
+\- Mobile preview.\
+\- Replay animation.\
+\- Reset camera.\
+\- Save Draft.\
+\- Publish.\
+\
+Do not update the live public version until the administrator explicitly publishes.\
+\
+\---\
+\
+\# PART I — DATA PERSISTENCE & PUBLISHING\
+\
+\## 29. DATABASE REQUIREMENTS\
+\
+Use the existing database infrastructure.\
+\
+If building missing backend components, prefer:\
+\- PostgreSQL.\
+\- Prisma.\
+\- Zod.\
+\- Secure object storage.\
+\
+Maintain entities for:\
+\- Users.\
+\- Bouquets.\
+\- Flowers.\
+\- Wrapping configurations.\
+\- Ribbon configurations.\
+\- Gift tag configurations.\
+\- Photo assets.\
+\- Messages.\
+\- Music assets.\
+\- Star configurations.\
+\- Moon configurations.\
+\- Entrance animations.\
+\- Theme configurations.\
+\- Published versions.\
+\- Backup snapshots.\
+\
+Apply backward-compatible schema migrations.\
+\
+Do not delete existing bouquet data.\
+\
+\## 30. SAVE & PUBLISH WORKFLOW\
+\
+Use:\
+\
+Edit → Live Preview → Save Draft → Preview → Publish → Public Website Updated.\
+\
+Requirements:\
+\- Autosave drafts.\
+\- Manual saving.\
+\- Save status indicators.\
+\- Publication snapshots.\
+\- Unique public URLs.\
+\- Custom slugs.\
+\- Publish/unpublish.\
+\- QR code sharing.\
+\- Optional password protection.\
+\- Optional expiration dates.\
+\- Backup and restore.\
+\
+Published bouquets must load their own saved configuration.\
+\
+\---\
+\
+\# PART J — SECURITY\
+\
+\## 31. SECURITY REQUIREMENTS\
+\
+Implement:\
+\- Secure administrator authentication.\
+\- Password hashing.\
+\- HttpOnly secure session cookies.\
+\- Server-side authorization.\
+\- Ownership validation.\
+\- Input validation.\
+\- CSRF protection where applicable.\
+\- Rate limiting.\
+\- Safe file uploads.\
+\- MIME and file signature validation.\
+\- File size restrictions.\
+\- XSS protection.\
+\- Secure database queries.\
+\- Private draft access controls.\
+\- Protected administrative routes.\
+\
+Public visitors must not be able to modify bouquet configurations.\
+\
+\---\
+\
+\# PART K — RESPONSIVE DESIGN\
+\
+\## 32. PUBLIC DESKTOP\
+\
+\- Full-screen immersive experience.\
+\- Centered 3D bouquet.\
+\- Prominent ribbon.\
+\- Clearly visible gift tag.\
+\- Starry background.\
+\- Visible moon.\
+\- Romantic message in the upper-right.\
+\- Minimal bottom controls.\
+\- Smooth camera interactions.\
+\
+\## 33. PUBLIC MOBILE\
+\
+\- Fully responsive portrait layout.\
+\- Bouquet remains within the viewport.\
+\- Flowers do not clip.\
+\- Ribbon remains visible.\
+\- Gift tag remains readable.\
+\- Stars remain visible.\
+\- Moon is repositioned appropriately.\
+\- Message card does not overlap the bouquet.\
+\- Touch rotation.\
+\- Pinch-to-zoom.\
+\- Responsive photo viewer.\
+\- Accessible controls.\
+\- Safe-area padding.\
+\- No horizontal overflow.\
+\
+\## 34. ADMIN RESPONSIVENESS\
+\
+Desktop:\
+\- Sidebar navigation.\
+\- Organized settings panels.\
+\- Live 3D preview.\
+\- Efficient workspace layout.\
+\
+Mobile:\
+\- Collapsible navigation drawer.\
+\- Touch-friendly controls.\
+\- Vertical settings layout.\
+\- Dedicated preview panel.\
+\- Accessible Save and Publish actions.\
+\
+Do not merely shrink the desktop interface.\
+\
+Design for both desktop and mobile usability.\
+\
+\---\
+\
+\# PART L — PERFORMANCE OPTIMIZATION\
+\
+\## 35. 3D RENDERING\
+\
+Use:\
+\- Three.js.\
+\- React Three Fiber.\
+\- Drei.\
+\- Optimized animation timelines.\
+\- Instanced meshes.\
+\- Shared materials.\
+\- Shared geometry.\
+\- Adaptive rendering quality.\
+\- Texture compression.\
+\- Frustum culling.\
+\- Proper resource cleanup.\
+\- Delta-time-based animation.\
+\- Reduced-motion support.\
+\
+Optimize for smooth performance on desktop and mobile.\
+\
+For lower-powered devices, reduce secondary particle density without removing essential elements such as the stars, moon, bouquet, and ribbon.\
+\
+\---\
+\
+\# PART M — IMPLEMENTATION PRIORITY\
+\
+\## 36. REQUIRED EXECUTION ORDER\
+\
+Work on the existing codebase in this order:\
+\
+\*\*Phase 1 — Inspect Existing Implementation\*\*\
+\- Review project structure.\
+\- Identify bouquet scene components.\
+\- Inspect ribbon and gift tag geometry.\
+\- Inspect starfield and moon components.\
+\- Review Admin Dashboard.\
+\- Review configuration persistence.\
+\
+\*\*Phase 2 — Fix Existing Bugs\*\*\
+\- Restore missing stars.\
+\- Fix ribbon positioning.\
+\- Improve gift tag thickness and color.\
+\- Correct moon visibility and positioning.\
+\- Remove unwanted top-left text.\
+\
+\*\*Phase 3 — Entrance Animation\*\*\
+\- Implement stem assembly.\
+\- Implement flower-by-flower arrangement.\
+\- Implement flower blooming.\
+\- Implement wrapping assembly.\
+\- Implement ribbon tying.\
+\- Implement final reveal.\
+\- Implement replay and skip.\
+\
+\*\*Phase 4 — Dashboard Integration\*\*\
+\- Add missing ribbon settings.\
+\- Add gift tag controls.\
+\- Add star controls.\
+\- Add moon controls.\
+\- Add entrance animation controls.\
+\- Connect live preview.\
+\- Implement persistent saving.\
+\
+\*\*Phase 5 — Responsive Optimization\*\*\
+\- Desktop adjustments.\
+\- Mobile adjustments.\
+\- Camera framing.\
+\- Touch interactions.\
+\- Particle performance.\
+\
+\*\*Phase 6 — Testing\*\*\
+\- Verify 3D rendering.\
+\- Verify animation.\
+\- Verify interactive photographs.\
+\- Verify music.\
+\- Verify dashboard functionality.\
+\- Verify database persistence.\
+\- Verify public publishing.\
+\- Verify security.\
+\- Verify desktop and mobile compatibility.\
+\
+\---\
+\
+\# PART N — FINAL ACCEPTANCE CRITERIA\
+\
+The implementation is complete only when:\
+\
+1\. The public website closely resembles the reference screenshot.\
+2\. The bouquet is rendered as real interactive 3D geometry.\
+3\. The stars are present and clearly visible.\
+4\. Additional stars have been added without removing existing ones.\
+5\. The moon is visible and elegantly positioned.\
+6\. The ribbon visibly protrudes outward.\
+7\. The bow has realistic three-dimensional loops.\
+8\. The ribbon tails hang naturally.\
+9\. The gift tag has increased thickness.\
+10\. The gift tag color is muted and less bright.\
+11\. The three unwanted top-left text elements are removed.\
+12\. The bouquet begins unassembled when the page first loads.\
+13\. Stems and flowers enter individually.\
+14\. Flowers bloom naturally.\
+15\. Wrapping paper forms around the bouquet.\
+16\. The ribbon ties itself during the opening sequence.\
+17\. The final bouquet matches the saved configuration.\
+18\. Replay and Skip Intro work correctly.\
+19\. Stars and moon remain visible during the entire animation.\
+20\. Interactive photo pixels continue working.\
+21\. Music and camera controls continue working.\
+22\. All new customization options are accessible from the Admin Dashboard.\
+23\. Live Preview updates correctly.\
+24\. Saved changes persist after refresh.\
+25\. Public pages display only published configurations.\
+26\. Desktop and mobile layouts are polished.\
+27\. No major rendering errors, broken controls, or regressions remain.\
+\
+\---\
+\
+\# CRITICAL FINAL INSTRUCTIONS\
+\
+\*\*DO NOT REMOVE THE EXISTING STARS. ADD MORE STARS INSTEAD.\*\*\
+\
+\*\*DO NOT REMOVE OR HIDE THE MOON.\*\*\
+\
+\*\*DO NOT DISPLAY A FULLY ASSEMBLED BOUQUET IMMEDIATELY. THE FLOWERS MUST BE VISIBLY ARRANGED ONE BY ONE.\*\*\
+\
+\*\*DO NOT MAKE THE RIBBON FLAT, HIDDEN, OR EMBEDDED INSIDE THE WRAPPING PAPER.\*\*\
+\
+\*\*DO NOT USE AN EXCESSIVELY BRIGHT GIFT TAG. MAKE IT THICKER AND MORE ELEGANT.\*\*\
+\
+\*\*DO NOT RESTORE THE UNWANTED TOP-LEFT TEXT.\*\*\
+\
+\*\*DO NOT BREAK EXISTING PHOTO, MUSIC, ANIMATION, DASHBOARD, OR PUBLISHING FEATURES.\*\*\
+\
+\*\*DO NOT REBUILD THE WEBSITE FROM SCRATCH. MODIFY THE EXISTING PROJECT.\*\*\
+\
+\*\*ALL VISUAL CONFIGURATION MUST BE MANAGEABLE THROUGH THE ADMIN DASHBOARD.\*\*\
+\
+\*\*ALWAYS PRIORITIZE BOTH DESKTOP AND MOBILE RESPONSIVENESS.\*\*\
+\
+\## EXPECTED FINAL EXPERIENCE\
+\
+When someone opens the public bouquet website, they should immediately see a beautiful black nighttime background filled with gently twinkling stars and a softly glowing moon.\
+\
+Then, individual flower stems begin arriving. Pink lilies enter one by one, arranging themselves into a beautiful bouquet while their petals gradually bloom.\
+\
+The pastel pink wrapping paper folds into position, followed by a prominent satin ribbon that ties itself into a beautiful three-dimensional bow. A thicker, softly colored gift tag settles naturally onto the ribbon.\
+\
+Small pink petals begin falling, delicate pixel particles appear, and the fully assembled bouquet gently floats at the center of the scene.\
+\
+Visitors can rotate the bouquet, open photographs through interactive pixels, listen to background music, and enjoy the romantic atmosphere.\
+\
+Administrators can customize the entire experience through a modern, responsive dashboard without manually editing code.\
+\
+\*\*Deliver a complete, cohesive, polished, fully functioning 3D bouquet experience with a reliable Admin Dashboard, persistent configuration, and beautiful cinematic animations.\*\*\

@@ -1,0 +1,2747 @@
+{
+  "defaultSlug": "pixel-flower-bouquet",
+  "bouquets": {
+    "pixel-flower-bouquet": {
+      "slug": "pixel-flower-bouquet",
+      "published": {
+        "version": 10,
+        "updatedAt": "2026-11-22T13:13:38.866Z",
+        "photos": [],
+        "flowers": [
+          {
+            "id": "lily-01",
+            "label": "Center Hero Hot-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              -0.24,
+              2.12,
+              0.86
+            ],
+            "rotation": [
+              0.46,
+              -0.14,
+              0.1
+            ],
+            "scale": 1.14,
+            "bloomDelay": 0,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-02",
+            "label": "High Blush Ivory Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              -0.88,
+              2.92,
+              0.14
+            ],
+            "rotation": [
+              0.3,
+              -0.44,
+              0.22
+            ],
+            "scale": 1.04,
+            "bloomDelay": 0.05,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-03",
+            "label": "High Crimson Rose Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              0.86,
+              2.86,
+              0.18
+            ],
+            "rotation": [
+              0.34,
+              0.42,
+              -0.18
+            ],
+            "scale": 1.06,
+            "bloomDelay": 0.09,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-04",
+            "label": "Lower-Right Casablanca White Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              0.84,
+              1.48,
+              0.82
+            ],
+            "rotation": [
+              0.58,
+              0.36,
+              -0.2
+            ],
+            "scale": 1.08,
+            "bloomDelay": 0.13,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-05",
+            "label": "Mid-Right Rose-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              1.18,
+              2.14,
+              0.66
+            ],
+            "rotation": [
+              0.44,
+              0.68,
+              -0.24
+            ],
+            "scale": 1.04,
+            "bloomDelay": 0.16,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-06",
+            "label": "Mid-Left Velvet Red Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              -1.32,
+              2.02,
+              0.34
+            ],
+            "rotation": [
+              0.48,
+              -0.78,
+              0.24
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.19,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-07",
+            "label": "Crown Orchid Lavender Lily",
+            "colorKind": "lavender",
+            "isBud": false,
+            "position": [
+              0.06,
+              2.88,
+              -0.78
+            ],
+            "rotation": [
+              -0.34,
+              3.08,
+              0.05
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.22,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-08",
+            "label": "Lower-Left Rose-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              -0.94,
+              1.42,
+              0.74
+            ],
+            "rotation": [
+              0.56,
+              -0.45,
+              0.22
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.24,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-09",
+            "label": "Front Collar Crimson Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              -0.06,
+              1.36,
+              1.18
+            ],
+            "rotation": [
+              0.68,
+              0.04,
+              -0.05
+            ],
+            "scale": 0.96,
+            "bloomDelay": 0.27,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-10",
+            "label": "Back-Left Rose-Peach Lily",
+            "colorKind": "peach",
+            "isBud": false,
+            "position": [
+              -1.14,
+              2.25,
+              -0.74
+            ],
+            "rotation": [
+              -0.38,
+              -2.35,
+              0.2
+            ],
+            "scale": 0.98,
+            "bloomDelay": 0.3,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-11",
+            "label": "Back-Right Stargazer Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              1.14,
+              2.28,
+              -0.76
+            ],
+            "rotation": [
+              -0.38,
+              2.32,
+              -0.2
+            ],
+            "scale": 0.98,
+            "bloomDelay": 0.32,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-12",
+            "label": "Lower-Back Ivory Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              0.04,
+              1.75,
+              -1.16
+            ],
+            "rotation": [
+              -0.56,
+              3.12,
+              0.04
+            ],
+            "scale": 0.96,
+            "bloomDelay": 0.34,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-01",
+            "label": "Apex Emerald-Blush Lily Bud",
+            "colorKind": "pink",
+            "isBud": true,
+            "position": [
+              0.12,
+              3.62,
+              -0.22
+            ],
+            "rotation": [
+              0.08,
+              0.14,
+              -0.06
+            ],
+            "scale": 0.78,
+            "bloomDelay": 0.36,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-02",
+            "label": "Left Crown Ivory Bud",
+            "colorKind": "white",
+            "isBud": true,
+            "position": [
+              -0.85,
+              3.35,
+              -0.35
+            ],
+            "rotation": [
+              -0.08,
+              -0.45,
+              0.28
+            ],
+            "scale": 0.74,
+            "bloomDelay": 0.38,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-03",
+            "label": "Right Crimson Lily Bud",
+            "colorKind": "red",
+            "isBud": true,
+            "position": [
+              1.55,
+              2.75,
+              -0.2
+            ],
+            "rotation": [
+              0.18,
+              0.65,
+              -0.42
+            ],
+            "scale": 0.74,
+            "bloomDelay": 0.4,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          }
+        ],
+        "wrap": {
+          "wrapTheme": "frosted-pink",
+          "wrapColor": "#fdf2f8",
+          "wrapInnerColor": "#f9a8d4",
+          "wrapOpacity": 0.9,
+          "ribbonColor": "#f48fb1",
+          "bowScale": 1.28,
+          "ribbonPositionX": 0,
+          "ribbonPositionY": -0.66,
+          "ribbonPositionZ": 0,
+          "ribbonForwardOffset": 0.14,
+          "ribbonLoopSize": 1.18,
+          "ribbonTailLength": 1.15,
+          "ribbonThickness": 1,
+          "ribbonRoughness": 0.26,
+          "ribbonSheen": 0.95,
+          "showGiftTag": true,
+          "tagWidth": 0.34,
+          "tagHeight": 0.42,
+          "tagThickness": 0.044,
+          "tagColor": "#D8C6BD",
+          "tagTextColor": "#111111",
+          "tagBrightness": 0.82,
+          "tagRoughness": 0.86,
+          "tagPositionX": 0.15,
+          "tagPositionY": -0.05,
+          "tagPositionZ": 0.12,
+          "tagRotationZ": 0.09,
+          "tagSwingIntensity": 0.65,
+          "tagText": "",
+          "tagMessage": "Every pixel of this bouquet holds a quiet wish for your happiness. Thank you for being my favorite story ♥"
+        },
+        "text": {
+          "recipientName": "",
+          "senderName": "",
+          "romanticMessage": "May your life be filled with happiness ♡",
+          "specialDate": "November 22, 2026",
+          "ribbonText": "Every pixel of this flower reminds me of you.",
+          "terminalTitle": "Pixel Flower Bouquet",
+          "loveLines": [
+            "Love ♥",
+            "Happiness ♥",
+            "Forever ♥",
+            "With You ♥"
+          ],
+          "footerBadge": "[ Welcome to my world ] ♡",
+          "cardBgOpacity": 0.85,
+          "cardBorderColor": "#f472b6",
+          "cardTextColor": "#ffffff",
+          "cardTextSize": "sm"
+        },
+        "animation": {
+          "pixelSize": "small",
+          "photoVividness": 0.24,
+          "autoRotate": true,
+          "rotationSpeed": 0.22,
+          "bloomSpeed": 1,
+          "fallingPetalsCount": 34,
+          "showOrbitRing": true,
+          "showStars": true,
+          "starDensity": 760,
+          "starSize": 1,
+          "starTwinkleIntensity": 0.48,
+          "starBrightness": 0.9,
+          "starAnimationSpeed": 0.85,
+          "starColor": "#ffffff",
+          "starDistribution": "spherical",
+          "showScatteredStars": true,
+          "scatteredStarsDensity": 320,
+          "showMoon": true,
+          "moonSize": 1.18,
+          "moonPositionX": -2.5,
+          "moonPositionY": 5.1,
+          "moonGlowIntensity": 0.78,
+          "moonOpacity": 0.94,
+          "moonStyle": "full",
+          "moonColor": "#f7f2fa",
+          "moonBrightness": 0.96,
+          "moonShowTexture": true,
+          "entranceEnabled": true,
+          "entranceDuration": 9,
+          "stemStageWeight": 1,
+          "flowerStageWeight": 1,
+          "wrapStageWeight": 1,
+          "ribbonStageWeight": 1,
+          "cameraEntranceIntensity": 0.75,
+          "allowSkipIntro": false
+        },
+        "music": {
+          "mode": "builtin",
+          "builtinTrackIndex": 0,
+          "uploadedAudioUrl": "",
+          "uploadedAudioName": "",
+          "defaultVolume": 0.55,
+          "autoPlayOnInteract": true
+        },
+        "theme": {
+          "preset": "romantic-pink",
+          "backgroundColor": "#000000",
+          "lightingIntensity": 1
+        },
+        "sharing": {
+          "slug": "pixel-flower-bouquet",
+          "isPublished": true,
+          "expiresAt": ""
+        },
+        "entrance": {
+          "pinEnabled": true,
+          "maxAttempts": 6,
+          "lockoutMinutes": 3,
+          "sessionDurationMinutes": 60,
+          "fakeFailure": {
+            "enabled": true,
+            "count": 1,
+            "oncePerVisitorPerBouquet": true,
+            "anim": {
+              "message": "You thought it was that easy? ♡",
+              "customMessages": [
+                "You thought it was that easy? ♡",
+                "Hehe, try one more time! 🌸",
+                "Almost unlocked... try again, cutie! 🤭",
+                "Oops! Not so fast 😝",
+                "One tiny kiss—I mean tap—again! 💗"
+              ],
+              "style": "bounce-blush",
+              "shakeIntensity": 1,
+              "showTeasingFlower": true,
+              "teasingFlowerSize": 1.05,
+              "durationMs": 2300,
+              "playSound": false,
+              "showParticles": true
+            }
+          },
+          "wrongPinAnim": {
+            "message": "Oops! Not so fast 😝",
+            "customMessages": [
+              "Oops! Not so fast 😝",
+              "Hehe, try again! 🌸",
+              "You thought it was that easy? ♡",
+              "Almost... but not quite! 🤭",
+              "Nice try, sweetheart! 💗"
+            ],
+            "style": "wiggle-bloom",
+            "shakeIntensity": 1,
+            "showTeasingFlower": true,
+            "teasingFlowerSize": 1,
+            "durationMs": 2000,
+            "playSound": false,
+            "showParticles": true
+          },
+          "lockScreen": {
+            "heading": "A Little Secret For You ♡",
+            "description": "Enter the 6-digit secret code to unlock your surprise.",
+            "backgroundColor": "#000000",
+            "accentColor": "#f472b6",
+            "inputBorderColor": "#f472b6",
+            "textColor": "#fff5f8",
+            "secondaryTextColor": "#fbcfe8",
+            "fontFamily": "editorial",
+            "inputSize": "md",
+            "inputSpacing": "normal",
+            "showMoon": true,
+            "showStars": true,
+            "petalDensity": 18,
+            "showFloralDecor": true,
+            "animationIntensity": 1,
+            "autoSubmit": true,
+            "showUnlockButton": true,
+            "maskInput": true
+          },
+          "curtain": {
+            "enabled": true,
+            "density": "lush",
+            "flowerCount": 220,
+            "flowerColors": [
+              "#f472b6",
+              "#fbcfe8",
+              "#fb7185",
+              "#ffffff",
+              "#e879f9"
+            ],
+            "minFlowerSize": 0.78,
+            "maxFlowerSize": 1.65,
+            "layers": 4,
+            "openingSpeed": 1,
+            "separationDistance": 1.18,
+            "rotationIntensity": 1,
+            "durationSec": 4.8,
+            "easing": "silk-dramatic",
+            "particleEffects": true,
+            "assembleBouquetAfter": true
+          },
+          "hasPinConfigured": false
+        }
+      },
+      "draft": {
+        "version": 16,
+        "updatedAt": "2026-11-22T13:17:03.686Z",
+        "photos": [
+          {
+            "id": "photo-e3d805ab-16d5-488e-9cd4-ae828ee24002",
+            "name": "mermaid-diagram (4).png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/c5e364c7-68eb-4b04-9078-6c8cfe39a321.png",
+            "previewUrl": "/api/media/photos/c5e364c7-68eb-4b04-9078-6c8cfe39a321.png",
+            "width": 1416,
+            "height": 2602,
+            "fileSize": 231571,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-b0a10bbb-77f7-40aa-9d76-55196fd77116",
+            "name": "ChatGPT Image Nov 21, 2026, 11_33_25 AM.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/be4aaac6-5b14-4887-a46a-f412115c5586.png",
+            "previewUrl": "/api/media/photos/be4aaac6-5b14-4887-a46a-f412115c5586.png",
+            "width": 640,
+            "height": 1840,
+            "fileSize": 444831,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-404a3450-2db3-4865-bb67-79c8db451883",
+            "name": "Job Vacancy .png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/f5b3cfa4-87ff-49d3-ac06-4c776ec5f40f.png",
+            "previewUrl": "/api/media/photos/f5b3cfa4-87ff-49d3-ac06-4c776ec5f40f.png",
+            "width": 1920,
+            "height": 1032,
+            "fileSize": 199574,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-00ea0fca-6787-4ec1-891e-fb86b194c1fd",
+            "name": "bayuGemini_Generated_Image_xrgsp0xrgsp0xrgs.jpg.jpeg",
+            "caption": "",
+            "originalUrl": "/api/media/photos/18ed1d8d-9862-46f8-8714-c53e64e330e8.jpg",
+            "previewUrl": "/api/media/photos/18ed1d8d-9862-46f8-8714-c53e64e330e8.jpg",
+            "width": 1216,
+            "height": 3538,
+            "fileSize": 2385419,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-3da1edfd-06ac-43d4-bccc-ff1c2e90845a",
+            "name": "bayuGemini_Generated_Image_xrgsp0xrgsp0xrgs.jpg (1).jpeg",
+            "caption": "",
+            "originalUrl": "/api/media/photos/23876995-b899-4831-b609-866012ac7abd.jpg",
+            "previewUrl": "/api/media/photos/23876995-b899-4831-b609-866012ac7abd.jpg",
+            "width": 1216,
+            "height": 3538,
+            "fileSize": 2385419,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-902d6656-9a0d-41e0-ad9c-29d78779f08c",
+            "name": "PENAMBAHAN KATEGORI PENCARIAN (2).png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/dce71e5f-3bc7-45e0-9b7f-ac0288c755e5.png",
+            "previewUrl": "/api/media/photos/dce71e5f-3bc7-45e0-9b7f-ac0288c755e5.png",
+            "width": 1872,
+            "height": 937,
+            "fileSize": 140222,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-28f70718-9ec1-4e58-9d8f-a1c28aa93194",
+            "name": "PENAMBAHAN KATEGORI PENCARIAN (1).png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/a7c588fc-8197-47e6-bd1c-f468ee7fabd1.png",
+            "previewUrl": "/api/media/photos/a7c588fc-8197-47e6-bd1c-f468ee7fabd1.png",
+            "width": 1872,
+            "height": 937,
+            "fileSize": 140222,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-d3d4050b-9151-4b5a-9889-71c1442bc53f",
+            "name": "PENAMBAHAN KATEGORI PENCARIAN.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/c8edf831-6964-4973-b695-3487f73f53f1.png",
+            "previewUrl": "/api/media/photos/c8edf831-6964-4973-b695-3487f73f53f1.png",
+            "width": 1872,
+            "height": 937,
+            "fileSize": 140222,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-45bd8584-c03c-4d86-999c-1fbbcfde2ce4",
+            "name": "KODMOD_Architecture_Agentic_Flow.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/97903921-a854-4d10-baaf-e4ec30f2f4e9.png",
+            "previewUrl": "/api/media/photos/97903921-a854-4d10-baaf-e4ec30f2f4e9.png",
+            "width": 1280,
+            "height": 720,
+            "fileSize": 155791,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-f9937568-770b-498f-ada4-d66971a12858",
+            "name": "KODMOD_Architecture_Full_System.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/d7fd908c-a87f-4ffc-a4b1-f9fac10a2aaf.png",
+            "previewUrl": "/api/media/photos/d7fd908c-a87f-4ffc-a4b1-f9fac10a2aaf.png",
+            "width": 1280,
+            "height": 720,
+            "fileSize": 173193,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-87764fd1-081f-4f4a-b7bc-deb73f8eadd2",
+            "name": "KODMOD_Architecture_Full_Agentic_Flow_Zoom.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/6a7a63a9-f054-4c4c-bfa6-7537c45e091a.png",
+            "previewUrl": "/api/media/photos/6a7a63a9-f054-4c4c-bfa6-7537c45e091a.png",
+            "width": 3840,
+            "height": 2160,
+            "fileSize": 612097,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-b8a7f904-1a76-45de-bed4-bfe16e2d7896",
+            "name": "WhatsApp Image 2026-10-16 at 22.55.12.jpeg",
+            "caption": "",
+            "originalUrl": "/api/media/photos/9bb59937-f6c4-4ffe-9986-f36c69d3da7b.jpg",
+            "previewUrl": "/api/media/photos/9bb59937-f6c4-4ffe-9986-f36c69d3da7b.jpg",
+            "width": 575,
+            "height": 1280,
+            "fileSize": 39680,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-d34bc01e-f4d8-4e51-81fd-5e8fd63a8c33",
+            "name": "WhatsApp Image 2026-10-16 at 22.53.27.jpeg",
+            "caption": "",
+            "originalUrl": "/api/media/photos/e77c0d65-2cff-40c7-97aa-d9c466343e00.jpg",
+            "previewUrl": "/api/media/photos/e77c0d65-2cff-40c7-97aa-d9c466343e00.jpg",
+            "width": 575,
+            "height": 1280,
+            "fileSize": 39157,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-d5f0214c-eb80-4454-83d5-348883481cae",
+            "name": "screencapture-framer-projects-Tactical-Lake-56TrB3XT7lDnNr5yX7jX-KwS96-2026-10-14-02_46_03.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/c9516806-6faa-450d-b608-54810a76436e.png",
+            "previewUrl": "/api/media/photos/c9516806-6faa-450d-b608-54810a76436e.png",
+            "width": 1920,
+            "height": 4877,
+            "fileSize": 1775611,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-2010897e-b838-4b2e-a9b5-425d9abdbc91",
+            "name": "KTM DIgital.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/d74bb7a2-bc95-42df-9dd3-bece90e06434.png",
+            "previewUrl": "/api/media/photos/d74bb7a2-bc95-42df-9dd3-bece90e06434.png",
+            "width": 265,
+            "height": 424,
+            "fileSize": 43931,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-607e0086-95c2-4dee-ba25-ad4a1ab2f6e8",
+            "name": "e411696c-d15e-41b7-abfc-e6fda5748866.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/f11c68cd-0308-4541-a47a-76bbba5a7206.png",
+            "previewUrl": "/api/media/photos/f11c68cd-0308-4541-a47a-76bbba5a7206.png",
+            "width": 941,
+            "height": 1672,
+            "fileSize": 1831364,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-9378f52f-1447-4a3f-8d28-061827ece11b",
+            "name": "275e85d9-1601-41da-9b3d-1b7593b7348e.png",
+            "caption": "",
+            "originalUrl": "/api/media/photos/e95ea407-cd17-4f38-b639-e77f8ed8be70.png",
+            "previewUrl": "/api/media/photos/e95ea407-cd17-4f38-b639-e77f8ed8be70.png",
+            "width": 1672,
+            "height": 941,
+            "fileSize": 1768698,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          },
+          {
+            "id": "photo-66ed0537-329d-470f-acc0-5104b2c5b77c",
+            "name": "cinema-palettes-famous-movie-colors-nightcrawler.jpg",
+            "caption": "",
+            "originalUrl": "/api/media/photos/6f08572d-ee00-4770-9b50-118e3a339683.jpg",
+            "previewUrl": "/api/media/photos/6f08572d-ee00-4770-9b50-118e3a339683.jpg",
+            "width": 780,
+            "height": 551,
+            "fileSize": 97235,
+            "isStarter": false,
+            "assignedFlowerIds": "all"
+          }
+        ],
+        "flowers": [
+          {
+            "id": "lily-01",
+            "label": "Center Hero Hot-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              -0.24,
+              2.12,
+              0.86
+            ],
+            "rotation": [
+              0.46,
+              -0.14,
+              0.1
+            ],
+            "scale": 1.14,
+            "bloomDelay": 0,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-02",
+            "label": "High Blush Ivory Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              -0.88,
+              2.92,
+              0.14
+            ],
+            "rotation": [
+              0.3,
+              -0.44,
+              0.22
+            ],
+            "scale": 1.04,
+            "bloomDelay": 0.05,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-03",
+            "label": "High Crimson Rose Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              0.86,
+              2.86,
+              0.18
+            ],
+            "rotation": [
+              0.34,
+              0.42,
+              -0.18
+            ],
+            "scale": 1.06,
+            "bloomDelay": 0.09,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-04",
+            "label": "Lower-Right Casablanca White Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              0.84,
+              1.48,
+              0.82
+            ],
+            "rotation": [
+              0.58,
+              0.36,
+              -0.2
+            ],
+            "scale": 1.08,
+            "bloomDelay": 0.13,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-05",
+            "label": "Mid-Right Rose-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              1.18,
+              2.14,
+              0.66
+            ],
+            "rotation": [
+              0.44,
+              0.68,
+              -0.24
+            ],
+            "scale": 1.04,
+            "bloomDelay": 0.16,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-06",
+            "label": "Mid-Left Velvet Red Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              -1.32,
+              2.02,
+              0.34
+            ],
+            "rotation": [
+              0.48,
+              -0.78,
+              0.24
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.19,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-07",
+            "label": "Crown Orchid Lavender Lily",
+            "colorKind": "lavender",
+            "isBud": false,
+            "position": [
+              0.06,
+              2.88,
+              -0.78
+            ],
+            "rotation": [
+              -0.34,
+              3.08,
+              0.05
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.22,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-08",
+            "label": "Lower-Left Rose-Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              -0.94,
+              1.42,
+              0.74
+            ],
+            "rotation": [
+              0.56,
+              -0.45,
+              0.22
+            ],
+            "scale": 1.02,
+            "bloomDelay": 0.24,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-09",
+            "label": "Front Collar Crimson Lily",
+            "colorKind": "red",
+            "isBud": false,
+            "position": [
+              -0.06,
+              1.36,
+              1.18
+            ],
+            "rotation": [
+              0.68,
+              0.04,
+              -0.05
+            ],
+            "scale": 0.96,
+            "bloomDelay": 0.27,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-10",
+            "label": "Back-Left Rose-Peach Lily",
+            "colorKind": "peach",
+            "isBud": false,
+            "position": [
+              -1.14,
+              2.25,
+              -0.74
+            ],
+            "rotation": [
+              -0.38,
+              -2.35,
+              0.2
+            ],
+            "scale": 0.98,
+            "bloomDelay": 0.3,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-11",
+            "label": "Back-Right Stargazer Pink Lily",
+            "colorKind": "pink",
+            "isBud": false,
+            "position": [
+              1.14,
+              2.28,
+              -0.76
+            ],
+            "rotation": [
+              -0.38,
+              2.32,
+              -0.2
+            ],
+            "scale": 0.98,
+            "bloomDelay": 0.32,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-12",
+            "label": "Lower-Back Ivory Lily",
+            "colorKind": "white",
+            "isBud": false,
+            "position": [
+              0.04,
+              1.75,
+              -1.16
+            ],
+            "rotation": [
+              -0.56,
+              3.12,
+              0.04
+            ],
+            "scale": 0.96,
+            "bloomDelay": 0.34,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-01",
+            "label": "Apex Emerald-Blush Lily Bud",
+            "colorKind": "pink",
+            "isBud": true,
+            "position": [
+              0.12,
+              3.62,
+              -0.22
+            ],
+            "rotation": [
+              0.08,
+              0.14,
+              -0.06
+            ],
+            "scale": 0.78,
+            "bloomDelay": 0.36,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-02",
+            "label": "Left Crown Ivory Bud",
+            "colorKind": "white",
+            "isBud": true,
+            "position": [
+              -0.85,
+              3.35,
+              -0.35
+            ],
+            "rotation": [
+              -0.08,
+              -0.45,
+              0.28
+            ],
+            "scale": 0.74,
+            "bloomDelay": 0.38,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          },
+          {
+            "id": "lily-bud-03",
+            "label": "Right Crimson Lily Bud",
+            "colorKind": "red",
+            "isBud": true,
+            "position": [
+              1.55,
+              2.75,
+              -0.2
+            ],
+            "rotation": [
+              0.18,
+              0.65,
+              -0.42
+            ],
+            "scale": 0.74,
+            "bloomDelay": 0.4,
+            "bloomIntensity": 1,
+            "swayIntensity": 1
+          }
+        ],
+        "wrap": {
+          "wrapTheme": "obsidian-plum",
+          "wrapColor": "#fdf2f8",
+          "wrapInnerColor": "#f9a8d4",
+          "wrapOpacity": 0.9,
+          "ribbonColor": "#fb7185",
+          "bowScale": 1.28,
+          "ribbonPositionX": 0,
+          "ribbonPositionY": -0.66,
+          "ribbonPositionZ": 0,
+          "ribbonForwardOffset": 0.14,
+          "ribbonLoopSize": 1.18,
+          "ribbonTailLength": 1.15,
+          "ribbonThickness": 1,
+          "ribbonRoughness": 0.26,
+          "ribbonSheen": 0.95,
+          "showGiftTag": true,
+          "tagWidth": 0.34,
+          "tagHeight": 0.42,
+          "tagThickness": 0.044,
+          "tagColor": "#D8C6BD",
+          "tagTextColor": "#111111",
+          "tagBrightness": 0.82,
+          "tagRoughness": 0.86,
+          "tagPositionX": 0.15,
+          "tagPositionY": -0.05,
+          "tagPositionZ": 0.12,
+          "tagRotationZ": 0.09,
+          "tagSwingIntensity": 0.65,
+          "tagText": "",
+          "tagMessage": "Every pixel of this bouquet holds a quiet wish for your happiness. Thank you for being my favorite story ♥"
+        },
+        "text": {
+          "recipientName": "",
+          "senderName": "",
+          "romanticMessage": "May your life be filled with happiness ♡",
+          "specialDate": "November 22, 2026",
+          "ribbonText": "Every pixel of this flower reminds me of you.",
+          "terminalTitle": "Pixel Flower Bouquet",
+          "loveLines": [
+            "Love ♥",
+            "Happiness ♥",
+            "Forever ♥",
+            "With You ♥"
+          ],
+          "footerBadge": "[ Welcome to my world ] ♡",
+          "cardBgOpacity": 0.85,
+          "cardBorderColor": "#f472b6",
+          "cardTextColor": "#ffffff",
+          "cardTextSize": "sm"
+        },
+        "animation": {
+          "pixelSize": "small",
+          "photoVividness": 0.24,
+          "autoRotate": true,
+          "rotationSpeed": 0.22,
+          "bloomSpeed": 1,
+          "fallingPetalsCount": 34,
+          "showOrbitRing": true,
+          "showStars": true,
+          "starDensity": 760,
+          "starSize": 1,
+          "starTwinkleIntensity": 0.48,
+          "starBrightness": 0.9,
+          "starAnimationSpeed": 0.85,
+          "starColor": "#ffe4e6",
+          "starDistribution": "spherical",
+          "showScatteredStars": true,
+          "scatteredStarsDensity": 320,
+          "showMoon": true,
+          "moonSize": 1.18,
+          "moonPositionX": -2.5,
+          "moonPositionY": 5.1,
+          "moonGlowIntensity": 0.78,
+          "moonOpacity": 0.94,
+          "moonStyle": "full",
+          "moonColor": "#fdf2f8",
+          "moonBrightness": 0.96,
+          "moonShowTexture": true,
+          "entranceEnabled": true,
+          "entranceDuration": 9,
+          "stemStageWeight": 1,
+          "flowerStageWeight": 1,
+          "wrapStageWeight": 1,
+          "ribbonStageWeight": 1,
+          "cameraEntranceIntensity": 0.75,
+          "allowSkipIntro": false
+        },
+        "music": {
+          "mode": "builtin",
+          "builtinTrackIndex": 0,
+          "uploadedAudioUrl": "",
+          "uploadedAudioName": "",
+          "defaultVolume": 0.55,
+          "autoPlayOnInteract": true
+        },
+        "theme": {
+          "preset": "red-rose",
+          "backgroundColor": "#070204",
+          "lightingIntensity": 1.02
+        },
+        "sharing": {
+          "slug": "pixel-flower-bouquet",
+          "isPublished": true,
+          "expiresAt": ""
+        },
+        "entrance": {
+          "pinEnabled": true,
+          "maxAttempts": 6,
+          "lockoutMinutes": 3,
+          "sessionDurationMinutes": 60,
+          "fakeFailure": {
+            "enabled": true,
+            "count": 1,
+            "oncePerVisitorPerBouquet": true,
+            "anim": {
+              "message": "You thought it was that easy? ♡",
+              "customMessages": [
+                "You thought it was that easy? ♡",
+                "Hehe, try one more time! 🌸",
+                "Almost unlocked... try again, cutie! 🤭",
+                "Oops! Not so fast 😝",
+                "One tiny kiss—I mean tap—again! 💗"
+              ],
+              "style": "bounce-blush",
+              "shakeIntensity": 1,
+              "showTeasingFlower": true,
+              "teasingFlowerSize": 1.05,
+              "durationMs": 2300,
+              "playSound": false,
+              "showParticles": true
+            }
+          },
+          "wrongPinAnim": {
+            "message": "Oops! Not so fast 😝",
+            "customMessages": [
+              "Oops! Not so fast 😝",
+              "Hehe, try again! 🌸",
+              "You thought it was that easy? ♡",
+              "Almost... but not quite! 🤭",
+              "Nice try, sweetheart! 💗"
+            ],
+            "style": "wiggle-bloom",
+            "shakeIntensity": 1,
+            "showTeasingFlower": true,
+            "teasingFlowerSize": 1,
+            "durationMs": 2000,
+            "playSound": false,
+            "showParticles": true
+          },
+          "lockScreen": {
+            "heading": "A Little Secret For You ♡",
+            "description": "Enter the 6-digit secret code to unlock your surprise.",
+            "backgroundColor": "#000000",
+            "accentColor": "#f472b6",
+            "inputBorderColor": "#f472b6",
+            "textColor": "#fff5f8",
+            "secondaryTextColor": "#fbcfe8",
+            "fontFamily": "editorial",
+            "inputSize": "md",
+            "inputSpacing": "normal",
+            "showMoon": true,
+            "showStars": true,
+            "petalDensity": 18,
+            "showFloralDecor": true,
+            "animationIntensity": 1,
+            "autoSubmit": true,
+            "showUnlockButton": true,
+            "maskInput": true
+          },
+          "curtain": {
+            "enabled": true,
+            "density": "lush",
+            "flowerCount": 220,
+            "flowerColors": [
+              "#f472b6",
+              "#fbcfe8",
+              "#fb7185",
+              "#ffffff",
+              "#e879f9"
+            ],
+            "minFlowerSize": 0.78,
+            "maxFlowerSize": 1.65,
+            "layers": 4,
+            "openingSpeed": 1,
+            "separationDistance": 1.18,
+            "rotationIntensity": 1,
+            "durationSec": 4.8,
+            "easing": "silk-dramatic",
+            "particleEffects": true,
+            "assembleBouquetAfter": true
+          },
+          "hasPinConfigured": false
+        }
+      },
+      "backups": [
+        {
+          "id": "backup-1795353218866",
+          "createdAt": "2026-11-22T13:13:38.866Z",
+          "note": "Pembaruan buket dipublikasikan",
+          "config": {
+            "version": 10,
+            "updatedAt": "2026-11-22T13:13:38.866Z",
+            "photos": [],
+            "flowers": [
+              {
+                "id": "lily-01",
+                "label": "Center Hero Hot-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.24,
+                  2.12,
+                  0.86
+                ],
+                "rotation": [
+                  0.46,
+                  -0.14,
+                  0.1
+                ],
+                "scale": 1.14,
+                "bloomDelay": 0,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-02",
+                "label": "High Blush Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  -0.88,
+                  2.92,
+                  0.14
+                ],
+                "rotation": [
+                  0.3,
+                  -0.44,
+                  0.22
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.05,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-03",
+                "label": "High Crimson Rose Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  0.86,
+                  2.86,
+                  0.18
+                ],
+                "rotation": [
+                  0.34,
+                  0.42,
+                  -0.18
+                ],
+                "scale": 1.06,
+                "bloomDelay": 0.09,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-04",
+                "label": "Lower-Right Casablanca White Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.84,
+                  1.48,
+                  0.82
+                ],
+                "rotation": [
+                  0.58,
+                  0.36,
+                  -0.2
+                ],
+                "scale": 1.08,
+                "bloomDelay": 0.13,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-05",
+                "label": "Mid-Right Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.18,
+                  2.14,
+                  0.66
+                ],
+                "rotation": [
+                  0.44,
+                  0.68,
+                  -0.24
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.16,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-06",
+                "label": "Mid-Left Velvet Red Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -1.32,
+                  2.02,
+                  0.34
+                ],
+                "rotation": [
+                  0.48,
+                  -0.78,
+                  0.24
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.19,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-07",
+                "label": "Crown Orchid Lavender Lily",
+                "colorKind": "lavender",
+                "isBud": false,
+                "position": [
+                  0.06,
+                  2.88,
+                  -0.78
+                ],
+                "rotation": [
+                  -0.34,
+                  3.08,
+                  0.05
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.22,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-08",
+                "label": "Lower-Left Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.94,
+                  1.42,
+                  0.74
+                ],
+                "rotation": [
+                  0.56,
+                  -0.45,
+                  0.22
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.24,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-09",
+                "label": "Front Collar Crimson Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -0.06,
+                  1.36,
+                  1.18
+                ],
+                "rotation": [
+                  0.68,
+                  0.04,
+                  -0.05
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.27,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-10",
+                "label": "Back-Left Rose-Peach Lily",
+                "colorKind": "peach",
+                "isBud": false,
+                "position": [
+                  -1.14,
+                  2.25,
+                  -0.74
+                ],
+                "rotation": [
+                  -0.38,
+                  -2.35,
+                  0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.3,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-11",
+                "label": "Back-Right Stargazer Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.14,
+                  2.28,
+                  -0.76
+                ],
+                "rotation": [
+                  -0.38,
+                  2.32,
+                  -0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.32,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-12",
+                "label": "Lower-Back Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.04,
+                  1.75,
+                  -1.16
+                ],
+                "rotation": [
+                  -0.56,
+                  3.12,
+                  0.04
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.34,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-01",
+                "label": "Apex Emerald-Blush Lily Bud",
+                "colorKind": "pink",
+                "isBud": true,
+                "position": [
+                  0.12,
+                  3.62,
+                  -0.22
+                ],
+                "rotation": [
+                  0.08,
+                  0.14,
+                  -0.06
+                ],
+                "scale": 0.78,
+                "bloomDelay": 0.36,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-02",
+                "label": "Left Crown Ivory Bud",
+                "colorKind": "white",
+                "isBud": true,
+                "position": [
+                  -0.85,
+                  3.35,
+                  -0.35
+                ],
+                "rotation": [
+                  -0.08,
+                  -0.45,
+                  0.28
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.38,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-03",
+                "label": "Right Crimson Lily Bud",
+                "colorKind": "red",
+                "isBud": true,
+                "position": [
+                  1.55,
+                  2.75,
+                  -0.2
+                ],
+                "rotation": [
+                  0.18,
+                  0.65,
+                  -0.42
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.4,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              }
+            ],
+            "wrap": {
+              "wrapTheme": "frosted-pink",
+              "wrapColor": "#fdf2f8",
+              "wrapInnerColor": "#f9a8d4",
+              "wrapOpacity": 0.9,
+              "ribbonColor": "#f48fb1",
+              "bowScale": 1.28,
+              "ribbonPositionX": 0,
+              "ribbonPositionY": -0.66,
+              "ribbonPositionZ": 0,
+              "ribbonForwardOffset": 0.14,
+              "ribbonLoopSize": 1.18,
+              "ribbonTailLength": 1.15,
+              "ribbonThickness": 1,
+              "ribbonRoughness": 0.26,
+              "ribbonSheen": 0.95,
+              "showGiftTag": true,
+              "tagWidth": 0.34,
+              "tagHeight": 0.42,
+              "tagThickness": 0.044,
+              "tagColor": "#D8C6BD",
+              "tagTextColor": "#111111",
+              "tagBrightness": 0.82,
+              "tagRoughness": 0.86,
+              "tagPositionX": 0.15,
+              "tagPositionY": -0.05,
+              "tagPositionZ": 0.12,
+              "tagRotationZ": 0.09,
+              "tagSwingIntensity": 0.65,
+              "tagText": "",
+              "tagMessage": "Every pixel of this bouquet holds a quiet wish for your happiness. Thank you for being my favorite story ♥"
+            },
+            "text": {
+              "recipientName": "",
+              "senderName": "",
+              "romanticMessage": "May your life be filled with happiness ♡",
+              "specialDate": "November 22, 2026",
+              "ribbonText": "Every pixel of this flower reminds me of you.",
+              "terminalTitle": "Pixel Flower Bouquet",
+              "loveLines": [
+                "Love ♥",
+                "Happiness ♥",
+                "Forever ♥",
+                "With You ♥"
+              ],
+              "footerBadge": "[ Welcome to my world ] ♡",
+              "cardBgOpacity": 0.85,
+              "cardBorderColor": "#f472b6",
+              "cardTextColor": "#ffffff",
+              "cardTextSize": "sm"
+            },
+            "animation": {
+              "pixelSize": "small",
+              "photoVividness": 0.24,
+              "autoRotate": true,
+              "rotationSpeed": 0.22,
+              "bloomSpeed": 1,
+              "fallingPetalsCount": 34,
+              "showOrbitRing": true,
+              "showStars": true,
+              "starDensity": 760,
+              "starSize": 1,
+              "starTwinkleIntensity": 0.48,
+              "starBrightness": 0.9,
+              "starAnimationSpeed": 0.85,
+              "starColor": "#ffffff",
+              "starDistribution": "spherical",
+              "showScatteredStars": true,
+              "scatteredStarsDensity": 320,
+              "showMoon": true,
+              "moonSize": 1.18,
+              "moonPositionX": -2.5,
+              "moonPositionY": 5.1,
+              "moonGlowIntensity": 0.78,
+              "moonOpacity": 0.94,
+              "moonStyle": "full",
+              "moonColor": "#f7f2fa",
+              "moonBrightness": 0.96,
+              "moonShowTexture": true,
+              "entranceEnabled": true,
+              "entranceDuration": 9,
+              "stemStageWeight": 1,
+              "flowerStageWeight": 1,
+              "wrapStageWeight": 1,
+              "ribbonStageWeight": 1,
+              "cameraEntranceIntensity": 0.75,
+              "allowSkipIntro": false
+            },
+            "music": {
+              "mode": "builtin",
+              "builtinTrackIndex": 0,
+              "uploadedAudioUrl": "",
+              "uploadedAudioName": "",
+              "defaultVolume": 0.55,
+              "autoPlayOnInteract": true
+            },
+            "theme": {
+              "preset": "romantic-pink",
+              "backgroundColor": "#000000",
+              "lightingIntensity": 1
+            },
+            "sharing": {
+              "slug": "pixel-flower-bouquet",
+              "isPublished": true,
+              "expiresAt": ""
+            },
+            "entrance": {
+              "pinEnabled": true,
+              "maxAttempts": 6,
+              "lockoutMinutes": 3,
+              "sessionDurationMinutes": 60,
+              "fakeFailure": {
+                "enabled": true,
+                "count": 1,
+                "oncePerVisitorPerBouquet": true,
+                "anim": {
+                  "message": "You thought it was that easy? ♡",
+                  "customMessages": [
+                    "You thought it was that easy? ♡",
+                    "Hehe, try one more time! 🌸",
+                    "Almost unlocked... try again, cutie! 🤭",
+                    "Oops! Not so fast 😝",
+                    "One tiny kiss—I mean tap—again! 💗"
+                  ],
+                  "style": "bounce-blush",
+                  "shakeIntensity": 1,
+                  "showTeasingFlower": true,
+                  "teasingFlowerSize": 1.05,
+                  "durationMs": 2300,
+                  "playSound": false,
+                  "showParticles": true
+                }
+              },
+              "wrongPinAnim": {
+                "message": "Oops! Not so fast 😝",
+                "customMessages": [
+                  "Oops! Not so fast 😝",
+                  "Hehe, try again! 🌸",
+                  "You thought it was that easy? ♡",
+                  "Almost... but not quite! 🤭",
+                  "Nice try, sweetheart! 💗"
+                ],
+                "style": "wiggle-bloom",
+                "shakeIntensity": 1,
+                "showTeasingFlower": true,
+                "teasingFlowerSize": 1,
+                "durationMs": 2000,
+                "playSound": false,
+                "showParticles": true
+              },
+              "lockScreen": {
+                "heading": "A Little Secret For You ♡",
+                "description": "Enter the 6-digit secret code to unlock your surprise.",
+                "backgroundColor": "#000000",
+                "accentColor": "#f472b6",
+                "inputBorderColor": "#f472b6",
+                "textColor": "#fff5f8",
+                "secondaryTextColor": "#fbcfe8",
+                "fontFamily": "editorial",
+                "inputSize": "md",
+                "inputSpacing": "normal",
+                "showMoon": true,
+                "showStars": true,
+                "petalDensity": 18,
+                "showFloralDecor": true,
+                "animationIntensity": 1,
+                "autoSubmit": true,
+                "showUnlockButton": true,
+                "maskInput": true
+              },
+              "curtain": {
+                "enabled": true,
+                "density": "lush",
+                "flowerCount": 220,
+                "flowerColors": [
+                  "#f472b6",
+                  "#fbcfe8",
+                  "#fb7185",
+                  "#ffffff",
+                  "#e879f9"
+                ],
+                "minFlowerSize": 0.78,
+                "maxFlowerSize": 1.65,
+                "layers": 4,
+                "openingSpeed": 1,
+                "separationDistance": 1.18,
+                "rotationIntensity": 1,
+                "durationSec": 4.8,
+                "easing": "silk-dramatic",
+                "particleEffects": true,
+                "assembleBouquetAfter": true
+              },
+              "hasPinConfigured": false
+            }
+          }
+        },
+        {
+          "id": "backup-1795353041976",
+          "createdAt": "2026-11-22T13:10:41.976Z",
+          "note": "Pembaruan buket dipublikasikan",
+          "config": {
+            "version": 2,
+            "updatedAt": "2026-11-22T13:10:41.976Z",
+            "photos": [],
+            "flowers": [
+              {
+                "id": "lily-01",
+                "label": "Center Hero Hot-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.24,
+                  2.12,
+                  0.86
+                ],
+                "rotation": [
+                  0.46,
+                  -0.14,
+                  0.1
+                ],
+                "scale": 1.14,
+                "bloomDelay": 0,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-02",
+                "label": "High Blush Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  -0.88,
+                  2.92,
+                  0.14
+                ],
+                "rotation": [
+                  0.3,
+                  -0.44,
+                  0.22
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.05,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-03",
+                "label": "High Crimson Rose Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  0.86,
+                  2.86,
+                  0.18
+                ],
+                "rotation": [
+                  0.34,
+                  0.42,
+                  -0.18
+                ],
+                "scale": 1.06,
+                "bloomDelay": 0.09,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-04",
+                "label": "Lower-Right Casablanca White Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.84,
+                  1.48,
+                  0.82
+                ],
+                "rotation": [
+                  0.58,
+                  0.36,
+                  -0.2
+                ],
+                "scale": 1.08,
+                "bloomDelay": 0.13,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-05",
+                "label": "Mid-Right Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.18,
+                  2.14,
+                  0.66
+                ],
+                "rotation": [
+                  0.44,
+                  0.68,
+                  -0.24
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.16,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-06",
+                "label": "Mid-Left Velvet Red Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -1.32,
+                  2.02,
+                  0.34
+                ],
+                "rotation": [
+                  0.48,
+                  -0.78,
+                  0.24
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.19,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-07",
+                "label": "Crown Orchid Lavender Lily",
+                "colorKind": "lavender",
+                "isBud": false,
+                "position": [
+                  0.06,
+                  2.88,
+                  -0.78
+                ],
+                "rotation": [
+                  -0.34,
+                  3.08,
+                  0.05
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.22,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-08",
+                "label": "Lower-Left Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.94,
+                  1.42,
+                  0.74
+                ],
+                "rotation": [
+                  0.56,
+                  -0.45,
+                  0.22
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.24,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-09",
+                "label": "Front Collar Crimson Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -0.06,
+                  1.36,
+                  1.18
+                ],
+                "rotation": [
+                  0.68,
+                  0.04,
+                  -0.05
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.27,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-10",
+                "label": "Back-Left Rose-Peach Lily",
+                "colorKind": "peach",
+                "isBud": false,
+                "position": [
+                  -1.14,
+                  2.25,
+                  -0.74
+                ],
+                "rotation": [
+                  -0.38,
+                  -2.35,
+                  0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.3,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-11",
+                "label": "Back-Right Stargazer Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.14,
+                  2.28,
+                  -0.76
+                ],
+                "rotation": [
+                  -0.38,
+                  2.32,
+                  -0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.32,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-12",
+                "label": "Lower-Back Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.04,
+                  1.75,
+                  -1.16
+                ],
+                "rotation": [
+                  -0.56,
+                  3.12,
+                  0.04
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.34,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-01",
+                "label": "Apex Emerald-Blush Lily Bud",
+                "colorKind": "pink",
+                "isBud": true,
+                "position": [
+                  0.12,
+                  3.62,
+                  -0.22
+                ],
+                "rotation": [
+                  0.08,
+                  0.14,
+                  -0.06
+                ],
+                "scale": 0.78,
+                "bloomDelay": 0.36,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-02",
+                "label": "Left Crown Ivory Bud",
+                "colorKind": "white",
+                "isBud": true,
+                "position": [
+                  -0.85,
+                  3.35,
+                  -0.35
+                ],
+                "rotation": [
+                  -0.08,
+                  -0.45,
+                  0.28
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.38,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-03",
+                "label": "Right Crimson Lily Bud",
+                "colorKind": "red",
+                "isBud": true,
+                "position": [
+                  1.55,
+                  2.75,
+                  -0.2
+                ],
+                "rotation": [
+                  0.18,
+                  0.65,
+                  -0.42
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.4,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              }
+            ],
+            "wrap": {
+              "wrapTheme": "frosted-pink",
+              "wrapColor": "#fdf2f8",
+              "wrapInnerColor": "#f9a8d4",
+              "wrapOpacity": 0.9,
+              "ribbonColor": "#f48fb1",
+              "bowScale": 1.28,
+              "ribbonPositionX": 0,
+              "ribbonPositionY": -0.66,
+              "ribbonPositionZ": 0,
+              "ribbonForwardOffset": 0.14,
+              "ribbonLoopSize": 1.18,
+              "ribbonTailLength": 1.15,
+              "ribbonThickness": 1,
+              "ribbonRoughness": 0.26,
+              "ribbonSheen": 0.95,
+              "showGiftTag": true,
+              "tagWidth": 0.34,
+              "tagHeight": 0.42,
+              "tagThickness": 0.044,
+              "tagColor": "#D8C6BD",
+              "tagTextColor": "#111111",
+              "tagBrightness": 0.82,
+              "tagRoughness": 0.86,
+              "tagPositionX": 0.15,
+              "tagPositionY": -0.05,
+              "tagPositionZ": 0.12,
+              "tagRotationZ": 0.09,
+              "tagSwingIntensity": 0.65,
+              "tagText": "",
+              "tagMessage": "Every pixel of this bouquet holds a quiet wish for your happiness. Thank you for being my favorite story ♥"
+            },
+            "text": {
+              "recipientName": "",
+              "senderName": "",
+              "romanticMessage": "May your life be filled with happiness ♡",
+              "specialDate": "November 22, 2026",
+              "ribbonText": "Every pixel of this flower reminds me of you.",
+              "terminalTitle": "Pixel Flower Bouquet",
+              "loveLines": [
+                "Love ♥",
+                "Happiness ♥",
+                "Forever ♥",
+                "With You ♥"
+              ],
+              "footerBadge": "[ Welcome to my world ] ♡",
+              "cardBgOpacity": 0.85,
+              "cardBorderColor": "#f472b6",
+              "cardTextColor": "#ffffff",
+              "cardTextSize": "sm"
+            },
+            "animation": {
+              "pixelSize": "medium",
+              "photoVividness": 0.24,
+              "autoRotate": true,
+              "rotationSpeed": 0.22,
+              "bloomSpeed": 1,
+              "fallingPetalsCount": 34,
+              "showOrbitRing": true,
+              "showStars": true,
+              "starDensity": 760,
+              "starSize": 1,
+              "starTwinkleIntensity": 0.48,
+              "starBrightness": 0.9,
+              "starAnimationSpeed": 0.85,
+              "starColor": "#ffffff",
+              "starDistribution": "spherical",
+              "showScatteredStars": true,
+              "scatteredStarsDensity": 320,
+              "showMoon": true,
+              "moonSize": 1.18,
+              "moonPositionX": -2.5,
+              "moonPositionY": 5.1,
+              "moonGlowIntensity": 0.78,
+              "moonOpacity": 0.94,
+              "moonStyle": "full",
+              "moonColor": "#f7f2fa",
+              "moonBrightness": 0.96,
+              "moonShowTexture": true,
+              "entranceEnabled": true,
+              "entranceDuration": 9,
+              "stemStageWeight": 1,
+              "flowerStageWeight": 1,
+              "wrapStageWeight": 1,
+              "ribbonStageWeight": 1,
+              "cameraEntranceIntensity": 0.75,
+              "allowSkipIntro": false
+            },
+            "music": {
+              "mode": "builtin",
+              "builtinTrackIndex": 0,
+              "uploadedAudioUrl": "",
+              "uploadedAudioName": "",
+              "defaultVolume": 0.55,
+              "autoPlayOnInteract": true
+            },
+            "theme": {
+              "preset": "romantic-pink",
+              "backgroundColor": "#000000",
+              "lightingIntensity": 1
+            },
+            "sharing": {
+              "slug": "pixel-flower-bouquet",
+              "isPublished": true,
+              "expiresAt": ""
+            },
+            "entrance": {
+              "pinEnabled": true,
+              "maxAttempts": 6,
+              "lockoutMinutes": 3,
+              "sessionDurationMinutes": 60,
+              "fakeFailure": {
+                "enabled": true,
+                "count": 1,
+                "oncePerVisitorPerBouquet": true,
+                "anim": {
+                  "message": "You thought it was that easy? ♡",
+                  "customMessages": [
+                    "You thought it was that easy? ♡",
+                    "Hehe, try one more time! 🌸",
+                    "Almost unlocked... try again, cutie! 🤭",
+                    "Oops! Not so fast 😝",
+                    "One tiny kiss—I mean tap—again! 💗"
+                  ],
+                  "style": "bounce-blush",
+                  "shakeIntensity": 1,
+                  "showTeasingFlower": true,
+                  "teasingFlowerSize": 1.05,
+                  "durationMs": 2300,
+                  "playSound": false,
+                  "showParticles": true
+                }
+              },
+              "wrongPinAnim": {
+                "message": "Oops! Not so fast 😝",
+                "customMessages": [
+                  "Oops! Not so fast 😝",
+                  "Hehe, try again! 🌸",
+                  "You thought it was that easy? ♡",
+                  "Almost... but not quite! 🤭",
+                  "Nice try, sweetheart! 💗"
+                ],
+                "style": "wiggle-bloom",
+                "shakeIntensity": 1,
+                "showTeasingFlower": true,
+                "teasingFlowerSize": 1,
+                "durationMs": 2000,
+                "playSound": false,
+                "showParticles": true
+              },
+              "lockScreen": {
+                "heading": "A Little Secret For You ♡",
+                "description": "Enter the 6-digit secret code to unlock your surprise.",
+                "backgroundColor": "#000000",
+                "accentColor": "#f472b6",
+                "inputBorderColor": "#f472b6",
+                "textColor": "#fff5f8",
+                "secondaryTextColor": "#fbcfe8",
+                "fontFamily": "editorial",
+                "inputSize": "md",
+                "inputSpacing": "normal",
+                "showMoon": true,
+                "showStars": true,
+                "petalDensity": 18,
+                "showFloralDecor": true,
+                "animationIntensity": 1,
+                "autoSubmit": true,
+                "showUnlockButton": true,
+                "maskInput": true
+              },
+              "curtain": {
+                "enabled": true,
+                "density": "lush",
+                "flowerCount": 220,
+                "flowerColors": [
+                  "#f472b6",
+                  "#fbcfe8",
+                  "#fb7185",
+                  "#ffffff",
+                  "#e879f9"
+                ],
+                "minFlowerSize": 0.78,
+                "maxFlowerSize": 1.65,
+                "layers": 4,
+                "openingSpeed": 1,
+                "separationDistance": 1.18,
+                "rotationIntensity": 1,
+                "durationSec": 4.8,
+                "easing": "silk-dramatic",
+                "particleEffects": true,
+                "assembleBouquetAfter": true
+              },
+              "hasPinConfigured": false
+            }
+          }
+        },
+        {
+          "id": "backup-1795352946776",
+          "createdAt": "2026-11-22T13:09:06.776Z",
+          "note": "Initial 15-flower luxury bouquet preset",
+          "config": {
+            "version": 1,
+            "updatedAt": "2026-11-22T13:09:06.775Z",
+            "photos": [],
+            "flowers": [
+              {
+                "id": "lily-01",
+                "label": "Center Hero Hot-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.24,
+                  2.12,
+                  0.86
+                ],
+                "rotation": [
+                  0.46,
+                  -0.14,
+                  0.1
+                ],
+                "scale": 1.14,
+                "bloomDelay": 0,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-02",
+                "label": "High Blush Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  -0.88,
+                  2.92,
+                  0.14
+                ],
+                "rotation": [
+                  0.3,
+                  -0.44,
+                  0.22
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.05,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-03",
+                "label": "High Crimson Rose Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  0.86,
+                  2.86,
+                  0.18
+                ],
+                "rotation": [
+                  0.34,
+                  0.42,
+                  -0.18
+                ],
+                "scale": 1.06,
+                "bloomDelay": 0.09,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-04",
+                "label": "Lower-Right Casablanca White Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.84,
+                  1.48,
+                  0.82
+                ],
+                "rotation": [
+                  0.58,
+                  0.36,
+                  -0.2
+                ],
+                "scale": 1.08,
+                "bloomDelay": 0.13,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-05",
+                "label": "Mid-Right Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.18,
+                  2.14,
+                  0.66
+                ],
+                "rotation": [
+                  0.44,
+                  0.68,
+                  -0.24
+                ],
+                "scale": 1.04,
+                "bloomDelay": 0.16,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-06",
+                "label": "Mid-Left Velvet Red Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -1.32,
+                  2.02,
+                  0.34
+                ],
+                "rotation": [
+                  0.48,
+                  -0.78,
+                  0.24
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.19,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-07",
+                "label": "Crown Orchid Lavender Lily",
+                "colorKind": "lavender",
+                "isBud": false,
+                "position": [
+                  0.06,
+                  2.88,
+                  -0.78
+                ],
+                "rotation": [
+                  -0.34,
+                  3.08,
+                  0.05
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.22,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-08",
+                "label": "Lower-Left Rose-Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  -0.94,
+                  1.42,
+                  0.74
+                ],
+                "rotation": [
+                  0.56,
+                  -0.45,
+                  0.22
+                ],
+                "scale": 1.02,
+                "bloomDelay": 0.24,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-09",
+                "label": "Front Collar Crimson Lily",
+                "colorKind": "red",
+                "isBud": false,
+                "position": [
+                  -0.06,
+                  1.36,
+                  1.18
+                ],
+                "rotation": [
+                  0.68,
+                  0.04,
+                  -0.05
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.27,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-10",
+                "label": "Back-Left Rose-Peach Lily",
+                "colorKind": "peach",
+                "isBud": false,
+                "position": [
+                  -1.14,
+                  2.25,
+                  -0.74
+                ],
+                "rotation": [
+                  -0.38,
+                  -2.35,
+                  0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.3,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-11",
+                "label": "Back-Right Stargazer Pink Lily",
+                "colorKind": "pink",
+                "isBud": false,
+                "position": [
+                  1.14,
+                  2.28,
+                  -0.76
+                ],
+                "rotation": [
+                  -0.38,
+                  2.32,
+                  -0.2
+                ],
+                "scale": 0.98,
+                "bloomDelay": 0.32,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-12",
+                "label": "Lower-Back Ivory Lily",
+                "colorKind": "white",
+                "isBud": false,
+                "position": [
+                  0.04,
+                  1.75,
+                  -1.16
+                ],
+                "rotation": [
+                  -0.56,
+                  3.12,
+                  0.04
+                ],
+                "scale": 0.96,
+                "bloomDelay": 0.34,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-01",
+                "label": "Apex Emerald-Blush Lily Bud",
+                "colorKind": "pink",
+                "isBud": true,
+                "position": [
+                  0.12,
+                  3.62,
+                  -0.22
+                ],
+                "rotation": [
+                  0.08,
+                  0.14,
+                  -0.06
+                ],
+                "scale": 0.78,
+                "bloomDelay": 0.36,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-02",
+                "label": "Left Crown Ivory Bud",
+                "colorKind": "white",
+                "isBud": true,
+                "position": [
+                  -0.85,
+                  3.35,
+                  -0.35
+                ],
+                "rotation": [
+                  -0.08,
+                  -0.45,
+                  0.28
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.38,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              },
+              {
+                "id": "lily-bud-03",
+                "label": "Right Crimson Lily Bud",
+                "colorKind": "red",
+                "isBud": true,
+                "position": [
+                  1.55,
+                  2.75,
+                  -0.2
+                ],
+                "rotation": [
+                  0.18,
+                  0.65,
+                  -0.42
+                ],
+                "scale": 0.74,
+                "bloomDelay": 0.4,
+                "bloomIntensity": 1,
+                "swayIntensity": 1
+              }
+            ],
+            "wrap": {
+              "wrapTheme": "frosted-pink",
+              "wrapColor": "#fdf2f8",
+              "wrapInnerColor": "#f9a8d4",
+              "wrapOpacity": 0.9,
+              "ribbonColor": "#f48fb1",
+              "bowScale": 1.28,
+              "ribbonPositionX": 0,
+              "ribbonPositionY": -0.66,
+              "ribbonPositionZ": 0,
+              "ribbonForwardOffset": 0.14,
+              "ribbonLoopSize": 1.18,
+              "ribbonTailLength": 1.15,
+              "ribbonThickness": 1,
+              "ribbonRoughness": 0.26,
+              "ribbonSheen": 0.95,
+              "showGiftTag": true,
+              "tagWidth": 0.34,
+              "tagHeight": 0.42,
+              "tagThickness": 0.044,
+              "tagColor": "#D8C6BD",
+              "tagTextColor": "#111111",
+              "tagBrightness": 0.82,
+              "tagRoughness": 0.86,
+              "tagPositionX": 0.15,
+              "tagPositionY": -0.05,
+              "tagPositionZ": 0.12,
+              "tagRotationZ": 0.09,
+              "tagSwingIntensity": 0.65,
+              "tagText": "",
+              "tagMessage": "Every pixel of this bouquet holds a quiet wish for your happiness. Thank you for being my favorite story ♥"
+            },
+            "text": {
+              "recipientName": "",
+              "senderName": "",
+              "romanticMessage": "May your life be filled with happiness ♡",
+              "specialDate": "November 22, 2026",
+              "ribbonText": "Every pixel of this flower reminds me of you.",
+              "terminalTitle": "Pixel Flower Bouquet",
+              "loveLines": [
+                "Love ♥",
+                "Happiness ♥",
+                "Forever ♥",
+                "With You ♥"
+              ],
+              "footerBadge": "[ Welcome to my world ] ♡",
+              "cardBgOpacity": 0.85,
+              "cardBorderColor": "#f472b6",
+              "cardTextColor": "#ffffff",
+              "cardTextSize": "sm"
+            },
+            "animation": {
+              "pixelSize": "medium",
+              "photoVividness": 0.24,
+              "autoRotate": true,
+              "rotationSpeed": 0.22,
+              "bloomSpeed": 1,
+              "fallingPetalsCount": 34,
+              "showOrbitRing": true,
+              "showStars": true,
+              "starDensity": 760,
+              "starSize": 1,
+              "starTwinkleIntensity": 0.48,
+              "starBrightness": 0.9,
+              "starAnimationSpeed": 0.85,
+              "starColor": "#ffffff",
+              "starDistribution": "spherical",
+              "showScatteredStars": true,
+              "scatteredStarsDensity": 320,
+              "showMoon": true,
+              "moonSize": 1.18,
+              "moonPositionX": -2.5,
+              "moonPositionY": 5.1,
+              "moonGlowIntensity": 0.78,
+              "moonOpacity": 0.94,
+              "moonStyle": "full",
+              "moonColor": "#f7f2fa",
+              "moonBrightness": 0.96,
+              "moonShowTexture": true,
+              "entranceEnabled": true,
+              "entranceDuration": 9,
+              "stemStageWeight": 1,
+              "flowerStageWeight": 1,
+              "wrapStageWeight": 1,
+              "ribbonStageWeight": 1,
+              "cameraEntranceIntensity": 0.75,
+              "allowSkipIntro": false
+            },
+            "music": {
+              "mode": "builtin",
+              "builtinTrackIndex": 0,
+              "uploadedAudioUrl": "",
+              "uploadedAudioName": "",
+              "defaultVolume": 0.55,
+              "autoPlayOnInteract": true
+            },
+            "theme": {
+              "preset": "romantic-pink",
+              "backgroundColor": "#000000",
+              "lightingIntensity": 1
+            },
+            "sharing": {
+              "slug": "pixel-flower-bouquet",
+              "isPublished": true,
+              "expiresAt": ""
+            },
+            "entrance": {
+              "pinEnabled": true,
+              "hasPinConfigured": false,
+              "maxAttempts": 6,
+              "lockoutMinutes": 3,
+              "sessionDurationMinutes": 60,
+              "fakeFailure": {
+                "enabled": true,
+                "count": 1,
+                "oncePerVisitorPerBouquet": true,
+                "anim": {
+                  "message": "You thought it was that easy? ♡",
+                  "customMessages": [
+                    "You thought it was that easy? ♡",
+                    "Hehe, try one more time! 🌸",
+                    "Almost unlocked... try again, cutie! 🤭",
+                    "Oops! Not so fast 😝",
+                    "One tiny kiss—I mean tap—again! 💗"
+                  ],
+                  "style": "bounce-blush",
+                  "shakeIntensity": 1,
+                  "showTeasingFlower": true,
+                  "teasingFlowerSize": 1.05,
+                  "durationMs": 2300,
+                  "playSound": false,
+                  "showParticles": true
+                }
+              },
+              "wrongPinAnim": {
+                "message": "Oops! Not so fast 😝",
+                "customMessages": [
+                  "Oops! Not so fast 😝",
+                  "Hehe, try again! 🌸",
+                  "You thought it was that easy? ♡",
+                  "Almost... but not quite! 🤭",
+                  "Nice try, sweetheart! 💗"
+                ],
+                "style": "wiggle-bloom",
+                "shakeIntensity": 1,
+                "showTeasingFlower": true,
+                "teasingFlowerSize": 1,
+                "durationMs": 2000,
+                "playSound": false,
+                "showParticles": true
+              },
+              "lockScreen": {
+                "heading": "A Little Secret For You ♡",
+                "description": "Enter the 6-digit secret code to unlock your surprise.",
+                "backgroundColor": "#000000",
+                "accentColor": "#f472b6",
+                "inputBorderColor": "#f472b6",
+                "textColor": "#fff5f8",
+                "secondaryTextColor": "#fbcfe8",
+                "fontFamily": "editorial",
+                "inputSize": "md",
+                "inputSpacing": "normal",
+                "showMoon": true,
+                "showStars": true,
+                "petalDensity": 18,
+                "showFloralDecor": true,
+                "animationIntensity": 1,
+                "autoSubmit": true,
+                "showUnlockButton": true,
+                "maskInput": true
+              },
+              "curtain": {
+                "enabled": true,
+                "density": "lush",
+                "flowerCount": 220,
+                "flowerColors": [
+                  "#f472b6",
+                  "#fbcfe8",
+                  "#fb7185",
+                  "#ffffff",
+                  "#e879f9"
+                ],
+                "minFlowerSize": 0.78,
+                "maxFlowerSize": 1.65,
+                "layers": 4,
+                "openingSpeed": 1,
+                "separationDistance": 1.18,
+                "rotationIntensity": 1,
+                "durationSec": 4.8,
+                "easing": "silk-dramatic",
+                "particleEffects": true,
+                "assembleBouquetAfter": true
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Pixel Flower Bouquet",
+  "description": "An interactive 3D bouquet of pink, white, and red lilies composed of thousands of real cropped photo tiles from your cherished memories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
